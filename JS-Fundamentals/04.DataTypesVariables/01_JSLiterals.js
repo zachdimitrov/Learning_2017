@@ -1,0 +1,11 @@
+let intNumber = 123;
+let realNumber = 12.34;
+let string = "Hello, Javascript!";
+let correct = true;
+let wrong = false;
+let nothing = null;
+let notDefined = undefined;
+let array = [1, 2, 3];
+let object = { 1: "one", 10: "two", 20: "three" };
+let smallest = -Infinity;
+let largest = Infinity;
