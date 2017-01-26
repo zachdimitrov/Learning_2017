@@ -10,13 +10,16 @@
 
 function solve() {
     return function sum(numbers) {
-        let result;
-        if (numbers.length === 0) {
+        let result,
+            len = numbers.length;
+        if (len === 0) {
             return null;
         }
 
-        if (!numbers.every(x => !Number.isNaN(Number(x)))) {
-            throw 'Error';
+        for (let i = 0, ; i < len; i += 1) {
+            if (Number.isNaN(Number(numbers[i]))) {
+                throw 'Error';
+            }
         }
 
         result = numbers.map(Number).reduce((x, y) => x + y, 0);
