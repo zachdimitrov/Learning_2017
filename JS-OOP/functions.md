@@ -2,6 +2,7 @@
 ### Functions overview
 
 function properties
+
 ```js
 function func(x, y, x) {
     return x + y;
@@ -9,7 +10,9 @@ function func(x, y, x) {
 func.length // pokazva broq na parametrite
 func.name   // vryshta imeto na funkciqta ('' ako nqma ime)
 ```
+
 function methods
+
 ```js
 console.log(func.toString());
 // shte vyrne funckiqta kato string
@@ -35,7 +38,8 @@ let maxElement = (function() {
 
 Array.prototype.callMaxElement = maxElement;
 ```
-manipulate functions  
+manipulate functions   
+
 ```js
 const modifiers = [
     function(x) { return x + 7; },
@@ -54,14 +58,17 @@ console.log(modifiers.someFunc());
 ```
 ### define Functions
 function declaration
+
 ```js
 function printMsg(msg) { console.log(msg); } // moje da se izvikva ot vsqkyde
 ```
 function expression
+
 ```js
 var printMsg = function() { console.log(msg); } // izvikva se samo sled deklariraneto
 ```
 function constructor
+
 ```js
 var printMsg = new Function("msg", "console.log('msg');"); // ne se izpolzva (samo v specialni sluchai)
 ```
@@ -79,6 +86,7 @@ let modifiers = [
 ```
 ## Recursion
 factorial
+
 ```js
 function factorial(n) {
     // exit condition - must have
@@ -90,6 +98,7 @@ function factorial(n) {
 }
 ```
 fibonacci
+
 ```js
 function fibonacci(n) {
     if(n === 0 || n === 1) {
@@ -99,6 +108,7 @@ function fibonacci(n) {
 }
 ```
 dom manipulation
+
 ```js
 function rotateEl(el) {
     el.style.display = 'block';
@@ -112,6 +122,7 @@ manipulateRecursive(document.body);
 ```
 ## Nested Functions
 ne e dobro reshenie zashtoto vatreshnata funkciq se definira nanovo
+
 ```js
 function x() {
     function y() {
@@ -120,6 +131,7 @@ function x() {
 }
 ```
 ## IIFE
+
 ```js
 const counter = (function() {
 // internal variable

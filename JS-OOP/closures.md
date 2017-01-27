@@ -95,5 +95,4 @@ const peopleList = (function(){
 
 peopleList.add('Pesho', 20, true);
 console.log(peopleList.get());
-
 ```
