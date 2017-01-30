@@ -136,3 +136,26 @@ var calculator = (function(multiplication) {
     multiplication.print = printValue;
 }(calculator || {}));
 ```
+## ES 2015 modules import-export
+
+#### Import
+
+```js
+// import everything from the module
+import * as myModule from "my-module";
+// import only one member from module
+import {myMember} from "my-module";
+// rename member
+import {veryLongName as short} from "my-modul";
+// importvane na vsichko (zaedno s neshtata ot global scope)
+import "myModule";
+```
+
+#### Export
+
+```js
+// export a function
+export { myFunction };
+// export a constant
+export const foo = Math.sqrt(2);
+``` 
