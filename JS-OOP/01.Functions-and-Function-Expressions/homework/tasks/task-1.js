@@ -16,7 +16,7 @@ function solve() {
             return null;
         }
 
-        for (let i = 0, ; i < len; i += 1) {
+        for (let i = 0; i < len; i += 1) {
             if (Number.isNaN(Number(numbers[i]))) {
                 throw 'Error';
             }
@@ -26,5 +26,6 @@ function solve() {
         return result;
     }
 }
+
 
 module.exports = solve;
