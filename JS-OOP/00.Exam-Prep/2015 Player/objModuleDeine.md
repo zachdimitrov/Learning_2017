@@ -19,6 +19,7 @@ function solve() {
                 enumerable: false, // optional, false by default
                 value: function(name) {
                     this.name = name;
+                    return this;
                 },
                 writable: false // optional, false by default
             });
