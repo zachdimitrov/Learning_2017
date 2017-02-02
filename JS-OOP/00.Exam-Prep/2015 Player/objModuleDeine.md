@@ -11,7 +11,7 @@ function solve() {
         human = (function() {
 
             // create empty object
-            human = Object.create({});
+            var human = Object.create({});
 
             // initialise human with properties (data descriptor)
             Object.defineProperty(human, 'init', {
