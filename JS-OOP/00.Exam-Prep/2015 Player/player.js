@@ -8,37 +8,6 @@ function solve() {
                 IMDB_MAX_RATING: 5
             };
 
-        player = (function() {
-            var currentPlayerId = 0,
-                player = Object.create({});
-
-            Object.defineProperty(player, 'init', {
-                value: function(name) {
-                    this.name = name;
-                    this._id = ++currentPlayerId;
-                    this._playlists = [];
-                    return this;
-                }
-            });
-
-            Object.defineProperty(player, 'id', {
-                get: function() {
-                    return this._id;
-                }
-            })
-
-            Object.defineProperty(player, 'name', {
-                get: function() {
-                    return this._name;
-                },
-                set: function(val) {
-
-                }
-            });
-
-            return player;
-        }());
-
         validator = {
             validateIfUndefined: function(val, name) {
                 name = name || 'value';
@@ -108,6 +77,37 @@ function solve() {
                 }
             }
         };
+        
+        player = (function() {
+            var currentPlayerId = 0,
+                player = Object.create({});
+
+            Object.defineProperty(player, 'init', {
+                value: function(name) {
+                    this.name = name;
+                    this._id = ++currentPlayerId;
+                    this._playlists = [];
+                    return this;
+                }
+            });
+
+            Object.defineProperty(player, 'id', {
+                get: function() {
+                    return this._id;
+                }
+            })
+
+            Object.defineProperty(player, 'name', {
+                get: function() {
+                    return this._name;
+                },
+                set: function(val) {
+
+                }
+            });
+
+            return player;
+        }());
 
         playlist = (function() {
             var currentPlaylistId = 0,
