@@ -498,8 +498,5 @@ console.log(playlist);
 
 console.log('------------------')
 player.addPlaylist(playlist);
-<<<<<<< HEAD
+
 console.log(player.search('van'));
-=======
-console.log(player.search('van'));
->>>>>>> ff4cb56e870109498055d5928d4d54465ff23fb9
