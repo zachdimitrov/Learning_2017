@@ -11,7 +11,7 @@ function solve() {
         human = (function() {
 
             // create empty object
-            human = Object.create({});
+            var human = Object.create({});
 
             // initialise human with properties (data descriptor)
             Object.defineProperty(human, 'init', {
@@ -19,6 +19,7 @@ function solve() {
                 enumerable: false, // optional, false by default
                 value: function(name) {
                     this.name = name;
+                    return this;
                 },
                 writable: false // optional, false by default
             });

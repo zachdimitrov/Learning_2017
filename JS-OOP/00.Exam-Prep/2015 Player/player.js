@@ -130,6 +130,37 @@ function solve() {
                     return this._name;
                 },
                 set: function(val) {
+
+                }
+            });
+
+            return player;
+        }());
+
+        player = (function() {
+            var currentPlayerId = 0,
+                player = Object.create({});
+
+            Object.defineProperty(player, 'init', {
+                value: function(name) {
+                    this.name = name;
+                    this._id = ++currentPlayerId;
+                    this._playlists = [];
+                    return this;
+                }
+            });
+
+            Object.defineProperty(player, 'id', {
+                get: function() {
+                    return this._id;
+                }
+            })
+
+            Object.defineProperty(player, 'name', {
+                get: function() {
+                    return this._name;
+                },
+                set: function(val) {
                     validator.validateString(val, 'Player name');
                     this._name = val;
                 }
@@ -464,6 +495,7 @@ var audio = module.getAudio('ivan', 'ivanov', 4);
 playlist.addPlayable(audio);
 
 console.log(playlist);
+
 console.log('------------------')
 player.addPlaylist(playlist);
 console.log(player.search('van'));
