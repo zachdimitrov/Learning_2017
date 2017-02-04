@@ -64,14 +64,12 @@ function solve() {
                 for (let c = 0; c < categories.length; c += 1) {
                     if (categories[c] === books[b].category) {
                         contain = true;
+                        break;
                     }
                 }
                 if (!contain) {
                     categories.push(books[b].category);
                 }
-                /*if (categories.every(book => book.category !== books[b].category)) {
-                    categories.push(books[b].category);
-                }*/
             }
             return categories;
         }
