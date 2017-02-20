@@ -85,8 +85,7 @@ function dog(name) {
         this._silenced = true;
     };
 
-    Object.defineProperty(Dog.pro)
-
+    // static methot - without prototype
 ```
 ## Static methods
 
@@ -117,6 +116,64 @@ class Point2D {
 }
 ```
 
+## Prototypes  
 - static methods are not connected to instances but to type itself
 - statichnite metodi i propertita gi zakacha direktno na obekta
 - nestatichnite se zakachat na prototipa (i mogat da se izvikvat ot iznstanciite).
+  - vseki pyt kato se syzdade obekta se syzdavat tezi funkcii
+
+```js
+// define getters and setters with old syntax
+function dog(name) {
+    this._name = name;
+    this._silenced = false;
+}
+
+// getters and setters
+Object.defineProperty(Dog.prototype, 'name', {
+    get: function() {
+        return this._name;
+    },
+    set: function(value) {
+        // validation
+        this._name = value;
+    }
+});
+
+// static getters and setters
+Object.defineProperty(Dog, 'whatDoesTheDogSay', {
+    get: function() {
+        return 'Bark!';
+    }
+})
+```
+
+## Inheritance
+
+[**More examples here**](http://exploringjs.com/es6/ch_classes.html)
+
+```js
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    toString() {
+        return `(${this.x}, ${this.y})`;
+    }
+}
+
+class ColorPoint extends Point { 
+    // use extends to show inheritance
+    constructor(x, y, color) {
+        super(x, y); 
+        // use super() to reuse parents class
+        this.color = color;
+    }
+    toString() {
+        return super.toString() + ' in ' + this.color; 
+        // use super.method() to call parents method
+        // use super.prop ti call parents property
+    }
+}
+```

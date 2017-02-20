@@ -1,2 +1,2 @@
-#  05. Class-Methods-and-Properties Homeworks
-- [Task 1 - Linked List](./task-1)
+#  Class methods and properties
+[Examples here](../04.Classes-and-Class-Constructors/README.md)
