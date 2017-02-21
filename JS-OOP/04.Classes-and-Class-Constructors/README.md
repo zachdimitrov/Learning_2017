@@ -177,3 +177,66 @@ class ColorPoint extends Point {
     }
 }
 ```
+
+## Mixins
+
+```js
+let PrintNameMixin = function(Base) {
+    return class extends Base {
+        printName() {
+            console.log(this._name);
+        }
+    }
+}
+
+class Person extends PrintNameMixin(Object) {
+    constructor(name) {
+        super();
+        this._name = name;
+    }
+}
+
+let p = new Person('Ivan');
+p.printName();
+```
+using fat arrow functions
+
+```js
+let PrintNameMixin = Base => class extends Base {
+    printName() {
+        console.log(this._name);
+    }
+}
+```
+
+## Symbol iterator example
+```js
+let fib = {
+    [Symbol.iterator]() {
+        let prev = 1,
+            current = 0;
+
+        return {
+            next() {
+                let valueToReturn = {
+                    value: current,
+                    done: false
+                };
+                [prev, current] = [current, prev + current];
+                return valueToReturn;
+            }
+        };
+    }
+};
+
+let index = 0;
+
+for (let fn of fib) {
+    if (index >= 100) {
+        break;
+    }
+    index += 1;
+
+    console.log(fn);
+}
+```
