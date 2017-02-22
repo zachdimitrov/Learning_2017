@@ -15,7 +15,7 @@ function solve() {
         NOT_ENOUGH_MANA: 'Not enough mana!',
         TARGET_NOT_FOUND: 'Target not found!',
         INVALID_BATTLE_PARTICIPANT: 'Battle participants must be ArmyUnit-like!',
-        INVALID_ALIGNMENT: 'alignment must be string with one of these values: "good, neutral, evil"'
+        INVALID_ALIGNMENT: 'Alignment must be good, neutral or evil!'
     };
 
     const validate = {
@@ -30,8 +30,19 @@ function solve() {
                 throw new Error(ERROR_MESSAGES.INVALID_NAME_SYMBOLS);
             }
         },
+        ifSpellIsCorrect: function(name) {
+            if (typeof name !== 'string') {
+                throw new Error(ERROR_MESSAGES.INVALID_SPELL_OBJECT);
+            }
+            if (name.length < 2 || name.length > 20) {
+                throw new Error(ERROR_MESSAGES.INVALID_SPELL_OBJECT);
+            }
+            if (name.match(/[^a-zA-Z ]/)) {
+                throw new Error(ERROR_MESSAGES.INVALID_SPELL_OBJECT);
+            }
+        },
         ifNumberIsAboveZero: function(n) {
-            if (typeof n !== 'number' || n < 0) {
+            if (typeof n !== 'number' || n <= 0 || n !== (n | 0)) {
                 throw new Error(ERROR_MESSAGES.INVALID_MANA);
             }
         },
@@ -61,7 +72,7 @@ function solve() {
             }
         },
         ifIsAULike: function(au) {
-            ['name', 'alignment', 'damage', 'health', 'count', 'speed'].forEach(function(key) {
+            ['_name', '_alignment', '_damage', '_health', '_count', '_speed'].forEach(function(key) {
                 if (!au.hasOwnProperty(key)) {
                     throw new Error('Battle participants must be ArmyUnit-like!');
                 }
@@ -76,8 +87,6 @@ function solve() {
             return id;
         };
     }());
-
-    // your implementation goes here
 
     class Spell {
         constructor(name, manaCost, effect) {
@@ -102,6 +111,17 @@ function solve() {
         set manaCost(val) {
             validate.ifNumberIsAboveZero(val);
             this._manaCost = val;
+        }
+
+        get effect() {
+            return this._effect;
+        }
+
+        set effect(val) {
+            if (typeof val !== 'function' || val.length !== 1) {
+                throw new Error(ERROR_MESSAGES.INVALID_EFFECT);
+            }
+            this._effect = val;
         }
     }
 
@@ -225,8 +245,23 @@ function solve() {
         }
 
         addSpellsTo(commanderName, ...spellsToAdd) {
+            let spells = [];
             for (let s of spellsToAdd) {
-                this.commanders.find(c => c.name === commanderName).spellbook.push(s);
+                let spell;
+                try {
+                    spell = new Spell(s.name, s.manaCost, s.effect);
+                } catch (e) {
+                    throw new Error(ERROR_MESSAGES.INVALID_SPELL_OBJECT);
+                }
+
+                if (spell) {
+                    spells.push(spell);
+                } else {
+                    throw new Error(ERROR_MESSAGES.INVALID_SPELL_OBJECT);
+                }
+            }
+            for (let s of spells) {
+                this.findCommanders({ name: commanderName })[0].spellbook.push(s);
             }
             return this;
         }
@@ -257,7 +292,7 @@ function solve() {
         }
 
         findArmyUnitById(id) {
-            for (c of this.commanders) {
+            for (let c of this.commanders) {
                 for (let au of c.army) {
                     if (au.id === id) {
                         return au;
@@ -268,16 +303,18 @@ function solve() {
 
         findArmyUnits(query) {
             let found = [];
-            for (let c of this.commanders) {
-                for (let au of c.army) {
+            let com = this.commanders;
+            for (let c in com) {
+                let army = com[c].army;
+                for (let au in army) {
                     let isFound = true;
-                    for (let key in Object.keys(query)) {
-                        if (query[key] !== au[key]) {
-                            found = false;
+                    for (let key of Object.keys(query)) {
+                        if (query[key] !== army[au][key]) {
+                            isFound = false;
                         }
                     }
                     if (isFound) {
-                        found.push(au);
+                        found.push(army[au]);
                     }
                 }
             }
@@ -294,32 +331,29 @@ function solve() {
                     // names must be equal
                     return 0;
                 } else {
-                    return b.speed - a.speed
+                    return b.speed - a.speed;
                 }
             });
         }
 
         spellcast(casterName, spellName, targetUnitId) {
-            let caster = this.commanders.find(c => c.name === casterName);
+            let caster = this.findCommanders({ name: casterName })[0];
             if (caster === undefined) {
-                throw new Error(`Cannot cast with non-existant commander ${casterName}`);
+                throw new Error('Can\'t cast with non-existant commander ' + casterName + '!');
             }
             let spell = caster.spellbook.find(s => s.name === spellName);
             if (spell === undefined) {
-                throw new Error(`${casterName} does not know ${spellName}`);
+                throw new Error(casterName + ' doesn\'t know ' + spellName + '!');
             }
             if (caster.mana < spell.manaCost) {
                 throw new Error('Not enough mana!');
             }
-            let armyUnit;
-            for (let c of this.commanders) {
-                armyUnit = c.army.find(au => au.id === targetUnitId);
-            }
+            let armyUnit = this.findArmyUnitById(targetUnitId);
             if (armyUnit === undefined) {
                 throw new Error('Target not found!');
             }
-
-            commander.mana -= spell.manaCost;
+            spell.effect(armyUnit);
+            caster.mana -= spell.manaCost;
             return this;
         }
 
@@ -328,27 +362,41 @@ function solve() {
             validate.ifIsAULike(defender);
             let attackerTotalDamage = attacker.damage * attacker.count;
             let defenderTotalHealth = defender.health * defender.count - attackerTotalDamage;
-            defender.count = Math.ceil(defenderTotalHealth / defender.health);
+            let c = Math.ceil(defenderTotalHealth / defender.health);
+            defender.count = c < 0 ? 0 : c;
             return this;
         }
     }
 
-    return new Battlemanager();
+    return new Battlemanager;
 }
 
 module.exports = solve;
 
+/*
 let MANAGER = solve();
 
-const commanders = [
-    { name: 'Tinky Winky', alignment: 'good', mana: 5 },
-    { name: 'xxx', alignment: 'good', mana: 10 },
-    { name: 'Bill Gates', alignment: 'evil', mana: 5 },
-].map(c => MANAGER.getCommander(c.name, c.alignment, c.mana))
+const tinkyWinky = MANAGER.getCommander('Tinky Winky', 'good', 66),
+    billGates = MANAGER.getCommander('Bill Gates', 'evil', 66);
 
-MANAGER.addCommanders(...commanders)
-console.log(MANAGER.commanders);
-console.log('---------------------')
-commanders.forEach(function(c) {
-    console.log(MANAGER.findCommanders({ name: c.name, alignment: c.alignment })[0]);
-});
+MANAGER.addCommanders(tinkyWinky, billGates);
+
+const armyUnits = {
+    dwarfs: MANAGER.getArmyUnit({ name: 'Dwarfs', speed: 20, damage: 33, health: 44, alignment: 'good', count: 50 }),
+    codeMonkeys: MANAGER.getArmyUnit({ name: 'Code Monkeys', speed: 20, damage: 5, health: 5, alignment: 'good', count: 300 }),
+    students: MANAGER.getArmyUnit({ name: 'Students', speed: 20, damage: 25, health: 33, alignment: 'good', count: 100 }),
+    mages1: MANAGER.getArmyUnit({ name: 'Mages One', speed: 15, damage: 60, health: 25, alignment: 'good', count: 5 }),
+    mages2: MANAGER.getArmyUnit({ name: 'Mages Two', speed: 15, damage: 60, health: 25, alignment: 'good', count: 50 }),
+    mages3: MANAGER.getArmyUnit({ name: 'Mages Three', speed: 15, damage: 60, health: 25, alignment: 'good', count: 3 }),
+};
+
+MANAGER
+    .addArmyUnitTo('Tinky Winky', armyUnits.dwarfs)
+    .addArmyUnitTo('Bill Gates', armyUnits.codeMonkeys)
+    .addArmyUnitTo('Bill Gates', armyUnits.students)
+    .addArmyUnitTo('Bill Gates', armyUnits.mages1)
+    .addArmyUnitTo('Tinky Winky', armyUnits.mages2)
+    .addArmyUnitTo('Bill Gates', armyUnits.mages3);
+
+console.log(MANAGER.findArmyUnits({}));
+*/
