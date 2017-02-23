@@ -1,0 +1,754 @@
+----------initial app
+App {
+  _name: 'app1',
+  _description: 'testrelease',
+  _version: 1,
+  _rating: 3,
+  _uploaded: 1 }
+----------release with version only
+App {
+  _name: 'app1',
+  _description: 'testrelease',
+  _version: 3,
+  _rating: 3,
+  _uploaded: 1 }
+----------release with all options
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 5,
+  _rating: 4,
+  _uploaded: 1 }
+----------release with 2 options
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 6,
+  _rating: 1,
+  _uploaded: 1 }
+----------release version as option
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 8,
+  _rating: 1,
+  _uploaded: 1 }
+----------create store
+Store {
+  _name: 's1',
+  _description: 'Ivani',
+  _version: 1,
+  _rating: 3,
+  _uploaded: 16,
+  apps: 
+   [ App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 3,
+       _rating: 6,
+       _uploaded: 19 },
+     App {
+       _name: 'joroC',
+       _description: 'metala',
+       _version: 5,
+       _rating: 6,
+       _uploaded: 26 },
+     App {
+       _name: 'joroA',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 21 },
+     App {
+       _name: 'joroB',
+       _description: 'metala',
+       _version: 6,
+       _rating: 5,
+       _uploaded: 25 },
+     App {
+       _name: 'ivanA',
+       _description: 'iqko',
+       _version: 2,
+       _rating: 5,
+       _uploaded: 23 },
+     App {
+       _name: 'ivanB',
+       _description: 'iqko',
+       _version: 3,
+       _rating: 6,
+       _uploaded: 24 },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 27 } ] }
+----------all
+[ App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 19 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 23 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 24 } ]
+-----------most resent
+[ App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 27 },
+  App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 26 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 25 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 24 } ]
+-----------most popular
+[ App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 26 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 24 },
+  App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 19 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 25 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 23 },
+  App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 27 },
+  App {
+    _name: 'joroA',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 21 } ]
+----------search
+[ App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 8,
+    _rating: 8,
+    _uploaded: 28 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 29 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 30 } ]
+----------show all
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 17,
+       apps: [Object] } ] }
+----------install first time
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 17,
+       apps: [Object] },
+     App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 8,
+       _rating: 8,
+       _uploaded: 28 } ] }
+----------try to install secon time
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 17,
+       apps: [Object] },
+     App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 8,
+       _rating: 8,
+       _uploaded: 28 } ] }
+-----------uninstall
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 17,
+       apps: [Object] } ] }
+-----------uninstall
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 17,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 33 } ] }
+-----------uninstall store
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 33 } ] }
+-----------update
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 16,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 33 } ] }
+-----------search
+[ App {
+    _name: 'joroA',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 21 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 25 },
+  App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 26 },
+  App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 33 } ]
+-----------list
+[ App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 33 } ]
+-----------ununstall last store
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 33 } ] }
+
+[Done] exited with code=0 in 0.178 seconds
+
+[Running] node "c:\Users\Zach\Dropbox\Project\Learning_2017\JS-OOP\Exam_2017-02-23\AppStores\task\temp-jdxkzifujq.js"
+----------initial app
+App {
+  _name: 'app1',
+  _description: 'testrelease',
+  _version: 1,
+  _rating: 3,
+  _uploaded: 0 }
+----------release with version only
+App {
+  _name: 'app1',
+  _description: 'testrelease',
+  _version: 3,
+  _rating: 3,
+  _uploaded: 0 }
+----------release with all options
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 5,
+  _rating: 4,
+  _uploaded: 0 }
+----------release with 2 options
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 6,
+  _rating: 1,
+  _uploaded: 0 }
+----------release version as option
+App {
+  _name: 'app1',
+  _description: 'newDescription',
+  _version: 8,
+  _rating: 1,
+  _uploaded: 0 }
+----------create store
+Store {
+  _name: 's1',
+  _description: 'Ivani',
+  _version: 1,
+  _rating: 3,
+  _uploaded: 0,
+  apps: 
+   [ App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 3,
+       _rating: 6,
+       _uploaded: 2 },
+     App {
+       _name: 'joroC',
+       _description: 'metala',
+       _version: 5,
+       _rating: 6,
+       _uploaded: 9 },
+     App {
+       _name: 'joroA',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 4 },
+     App {
+       _name: 'joroB',
+       _description: 'metala',
+       _version: 6,
+       _rating: 5,
+       _uploaded: 8 },
+     App {
+       _name: 'ivanA',
+       _description: 'iqko',
+       _version: 2,
+       _rating: 5,
+       _uploaded: 6 },
+     App {
+       _name: 'ivanB',
+       _description: 'iqko',
+       _version: 3,
+       _rating: 6,
+       _uploaded: 7 },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 10 } ] }
+----------all
+[ App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 2 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 6 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 7 } ]
+-----------most resent
+[ App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 10 },
+  App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 9 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 8 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 7 } ]
+-----------most popular
+[ App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 9 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 7 },
+  App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 2 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 8 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 6 },
+  App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 10 },
+  App {
+    _name: 'joroA',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 4 } ]
+----------search
+[ App {
+    _name: 'ivan',
+    _description: 'iqko',
+    _version: 8,
+    _rating: 8,
+    _uploaded: 11 },
+  App {
+    _name: 'ivanA',
+    _description: 'iqko',
+    _version: 2,
+    _rating: 5,
+    _uploaded: 12 },
+  App {
+    _name: 'ivanB',
+    _description: 'iqko',
+    _version: 3,
+    _rating: 6,
+    _uploaded: 13 } ]
+----------show all
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 0,
+       apps: [Object] } ] }
+----------install first time
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 0,
+       apps: [Object] },
+     App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 8,
+       _rating: 8,
+       _uploaded: 11 } ] }
+----------try to install secon time
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 0,
+       apps: [Object] },
+     App {
+       _name: 'ivan',
+       _description: 'iqko',
+       _version: 8,
+       _rating: 8,
+       _uploaded: 11 } ] }
+-----------uninstall
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 0,
+       apps: [Object] } ] }
+-----------uninstall
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     Store {
+       _name: 's2',
+       _description: 'Jorovci',
+       _version: 2,
+       _rating: 9,
+       _uploaded: 0,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 16 } ] }
+-----------uninstall store
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 16 } ] }
+-----------update
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ Store {
+       _name: 's1',
+       _description: 'Ivani',
+       _version: 1,
+       _rating: 3,
+       _uploaded: 0,
+       apps: [Object] },
+     App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 16 } ] }
+-----------search
+[ App {
+    _name: 'joroA',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 4 },
+  App {
+    _name: 'joroB',
+    _description: 'metala',
+    _version: 6,
+    _rating: 5,
+    _uploaded: 8 },
+  App {
+    _name: 'joroC',
+    _description: 'metala',
+    _version: 5,
+    _rating: 6,
+    _uploaded: 9 },
+  App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 16 } ]
+-----------list
+[ App {
+    _name: 'joroD',
+    _description: 'metala',
+    _version: 3,
+    _rating: 2,
+    _uploaded: 16 } ]
+-----------ununstall last store
+Device {
+  _hostname: 'kancho',
+  _apps: 
+   [ App {
+       _name: 'joroD',
+       _description: 'metala',
+       _version: 3,
+       _rating: 2,
+       _uploaded: 16 } ] }

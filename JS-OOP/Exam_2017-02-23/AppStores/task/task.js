@@ -50,7 +50,7 @@ function solve() {
             this.description = description;
             this.version = version;
             this.rating = rating;
-            this._uploaded = uploaded();
+            this._uploaded = 0;
         }
 
         get name() {
@@ -129,6 +129,7 @@ function solve() {
         constructor(name, description, version, rating) {
             super(name, description, version, rating);
             this.apps = [];
+            this._uploaded = 0;
         }
 
         uploadApp(app) {
@@ -221,9 +222,6 @@ function solve() {
         }
 
         set apps(val) {
-            if (!Array.isArray(val)) {
-                throw new Error('Invalid array of apps!');
-            }
             val.forEach(app => {
                 if (!(app instanceof App || app instanceof Store)) {
                     throw new Error('App must be an instance of App!');
@@ -269,13 +267,14 @@ function solve() {
 
         install(name) {
             let foundApp = this.search(name)
-                .filter(app => app.name = name)
+                .filter(app => app.name === name)
                 .sort((a, b) => b.version - a.version)[0];
-
             if (typeof foundApp === 'undefined') {
                 throw new Error('App is not found in app stores!');
             } else {
-                this.apps.push(foundApp);
+                if (this.apps.indexOf(foundApp) < 0) {
+                    this.apps.push(foundApp);
+                }
             }
             return this;
         }
@@ -292,7 +291,8 @@ function solve() {
         }
 
         listInstalled() {
-            return this.apps
+            let list = [];
+            list = this.apps
                 .filter(app => app instanceof App && !(app instanceof Store))
                 .sort(function(a, b) {
                     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
@@ -306,6 +306,7 @@ function solve() {
                     // names must be equal
                     return 0;
                 });
+            return list;
         }
 
         update() {
@@ -354,6 +355,7 @@ function solve() {
 module.exports = solve;
 
 /*
+// bad idea
 let o = +new Date().getTime();
 console.log(o);
 
@@ -367,19 +369,30 @@ setTimeout(function(){
 
 const s = solve();
 
+// create test app for release 
 let app1 = s.createApp('app1', 'testrelease', 1, 3);
+console.log('----------initial app');
+console.log(app1);
+
+console.log('----------release with version only');
 console.log(app1.release(3));
+
+console.log('----------release with all options');
 console.log(app1.release({ version: 5, description: 'newDescription', rating: 4 }));
+
+console.log('----------release with 2 options');
 console.log(app1.release({ version: 6, rating: 1 }));
+
+console.log('----------release version as option');
 console.log(app1.release({ version: 8 }));
 
+// create apps for stores
 let ivan1 = s.createApp('fsdf', '3', 1, 1);
 let ivan2 = s.createApp('ivan', 'iqko', 2, 5);
 let ivan3 = s.createApp('ivan', 'iqko', 3, 6);
 let joroA = s.createApp('joroA', 'metala', 3, 2);
 let joroB = s.createApp('joroB', 'metala', 3, 5);
 let joroC = s.createApp('joroC', 'metala', 3, 6);
-
 let ivan4 = s.createApp('ivan', 'iqko', 8, 8);
 let ivan5 = s.createApp('ivanA', 'iqko', 2, 5);
 let ivan6 = s.createApp('ivanB', 'iqko', 3, 6);
@@ -387,19 +400,39 @@ let joroD = s.createApp('joroD', 'metala', 3, 2);
 let joroE = s.createApp('joroB', 'metala', 6, 5);
 let joroF = s.createApp('joroC', 'metala', 5, 6);
 
+//create apps for device
 let ivan11 = s.createApp('ivan', 'iqko', 1, 1);
 let joroAA = s.createApp('joroC', 'metala', 1, 1);
 
-
+// create stores
 let store1 = s.createStore('s1', 'Ivani', 1, 3);
 let store2 = s.createStore('s2', 'Jorovci', 2, 9);
+
+// upload apps to store 1
 store1.uploadApp(ivan2)
     .uploadApp(ivan3)
     .uploadApp(joroC)
     .uploadApp(joroA)
     .uploadApp(joroB)
-    .takedownApp('joroB');
+    .uploadApp(ivan5)
+    .uploadApp(ivan6)
+    .uploadApp(joroE)
+    .uploadApp(joroF)
+    .uploadApp(joroD);
 
+console.log('----------create store');
+console.log(store1);
+
+console.log('----------all');
+console.log(store1.search('iv'));
+
+console.log('-----------most resent');
+console.log(store1.listMostRecentApps(4));
+
+console.log('-----------most popular');
+console.log(store1.listMostPopularApps());
+
+// upload apps to store 2
 store2.uploadApp(ivan4)
     .uploadApp(ivan5)
     .uploadApp(ivan6)
@@ -407,12 +440,38 @@ store2.uploadApp(ivan4)
     .uploadApp(joroF)
     .uploadApp(joroD);
 
-let dev = s.createDevice('kancho', [ivan11, joroAA, store1, store2]);
+// create device
+let dev = s.createDevice('kancho', [joroAA, store1, store2]);
 
+console.log('----------search');
+console.log(dev.search('ivan'));
+
+console.log('----------show all');
+console.log(dev);
+
+console.log('----------install first time');
+console.log(dev.install('ivan'));
+
+console.log('----------try to install secon time');
+console.log(dev.install('ivan'));
+
+console.log('-----------list');
+console.log(dev.listInstalled());
+
+console.log('-----------uninstall');
+console.log(dev.uninstall('ivan'));
+
+console.log('-----------uninstall');
 console.log(dev.install('joroD'));
-console.log('--------------------');
+
+console.log('-----------uninstall store');
 console.log(dev.uninstall('s2'));
-console.log('--------------------');
+
+console.log('-----------update');
 console.log(dev.update());
-console.log('====================');
+
+console.log('-----------search');
 console.log(dev.search('jo'));
+
+console.log('-----------ununstall last store');
+console.log(dev.uninstall('s1'));
