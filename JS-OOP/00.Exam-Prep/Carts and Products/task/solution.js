@@ -1,146 +1,123 @@
-/* globals module */
-
-"use strict";
-
 function solve() {
+    const validate = {
+        ifString: function(val, name) {
+            name = name || 'Value';
+            if (typeof val !== 'string') {
+                throw new Error(name + ' must be a string!');
+            }
+        },
+        ifNumber: function(val, name) {
+            name = name || 'Value';
+            if (typeof val !== 'number') {
+                throw new Error(name = ' must be a number!');
+            }
+        },
+        ifIsProductLike: function(val) {
+            ['productType', 'name', 'price'].forEach(prop => {
+                if (typeof val[prop] === 'undefined') {
+                    throw new Error('Value must be product or product-like!');
+                }
+            });
+        }
+    }
     class Product {
         constructor(productType, name, price) {
-            this._productType = productType;
-            this._name = name;
-            this._price = price;
+            this.productType = productType;
+            this.name = name;
+            this.price = price;
         }
 
         get productType() {
             return this._productType;
         }
 
+        set productType(val) {
+            validate.ifString(val);
+            this._productType = val;
+        }
+
         get name() {
             return this._name;
+        }
+
+        set name(val) {
+            validate.ifString(val);
+            this._name = val;
         }
 
         get price() {
             return this._price;
         }
+
+        set price(val) {
+            validate.ifNumber(val);
+            this._price = val;
+        }
     }
 
     class ShoppingCart {
         constructor() {
-            this._products = [];
-        }
-
-        get products() {
-            return this._products;
-            // return this._products.slice() // za da vyrne kopie
+            this.products = [];
         }
 
         add(product) {
+            validate.ifIsProductLike(product);
             this.products.push(product);
             return this;
         }
 
         remove(product) {
-            const index = this.products.findIndex(p => p.name === product.name && p.productType === product.productType && p.price === product.price);
-            if (index < 0) {
-                throw new Error("Produst not found in cart!");
-            } else {
-                this.products.splice(index, 1);
+            validate.ifIsProductLike(product);
+            let i = this.products.indexOf(product);
+            if (i < 0) {
+                throw new Error('Product is not in the shopping cart!');
             }
-            return this;
+            this.products.splice(i, 1);
         }
 
         showCost() {
-            return this.products.reduce((cost, b) => cost + b.price, 0);
+            let result = 0;
+            this.products.map(p => result += p.price);
+            return result;
         }
 
         showProductTypes() {
-
-            const uniqTypesObj = {};
-            this.products.forEach(p => uniqTypesObj[p.productType] = true);
-            return Object.keys(uniqTypesObj).sort();
+            let types = [];
+            this.products.map(p => {
+                if (types.indexOf(p.productType) < 0) {
+                    types.push(p.productType);
+                }
+            });
+            return types.sort();
         }
 
         getInfo() {
-            const groupedByName = {};
-
+            let info = {};
+            info.products = [];
+            info.totalPrice = 0;
             this.products.forEach(p => {
-                if (groupedByName.hasOwnProperty(p.name)) {
-                    groupedByName[p.name].quantity += 1;
-                    groupedByName[p.name].totalPrice += p.price;
-                } else {
-                    groupedByName[p.name] = {
+                let pushed = info.products.find(prod => prod.name === p.name);
+                if (info.products.length === 0 || typeof pushed === 'undefined') {
+                    info.products.push({
                         name: p.name,
                         totalPrice: p.price,
                         quantity: 1
-                    };
+                    });
+                    info.totalPrice += p.price;
+                } else {
+                    pushed.totalPrice += p.price;
+                    pushed.quantity++;
+                    info.totalPrice += p.price;
                 }
             });
-
-            return {
-                products: Object.keys(groupedByName).map(k => groupedByName[k]).sort(x => x.name),
-                totalPrice: this.showCost()
-            };
+            return info;
         }
     }
 
     return {
-        Product: Product,
-        ShoppingCart: ShoppingCart
+        Product,
+        ShoppingCart
     };
 }
 
-// BG Coder to here
-
 module.exports = solve;
-
-// tests
-
-let { Product, ShoppingCart } = solve();
-
-let cart = new ShoppingCart();
-
-let pr1 = new Product("Sweets", "Shokolad Milka", 2);
-cart.add(pr1);
-console.log(cart.showCost());
-//prints `2`
-
-let pr2 = new Product("Groceries", "Salad", 0.5);
-cart.add(pr2);
-cart.add(pr2);
-console.log(cart.showCost());
-//prints `3`
-
-console.log(cart.showProductTypes());
-//prints ["Sweets", "Groceries"]
-
-console.log(cart.getInfo());
-/* prints
-{
-    totalPrice: 3
-    products: [{
-        name: "Salad",
-        totalPrice: 1,
-        quantity: 2
-    }, {
-       name: "Shokolad Milka",
-       totalPrice: 2,
-       quantity: 1 
-    }]
-}
-*/
-
-cart.remove({ name: "Salad", productType: "Groceries", price: 0.5 })
-console.log(cart.getInfo());
-/* prints
-{
-    totalPrice: 2.5
-    products: [{
-        name: "Salad",
-        totalPrice: 0.5,
-        quantity: 1
-    }, {
-       name: "Shokolad Milka",
-       totalPrice: 2,
-       quantity: 1 
-    }]
-}
-*/
