@@ -44,6 +44,16 @@ function solve() {
         };
     }());
 
+    function copyApp(a) {
+        return {
+            name: a.name,
+            description: a.description,
+            version: a.version,
+            rating: a.rating,
+            apps: a.apps
+        };
+    }
+
     class App {
         constructor(name, description, version, rating) {
             this.name = name;
@@ -121,6 +131,8 @@ function solve() {
                 }
                 this.version = options;
                 return this;
+            } else {
+                throw new Error('Invalid release/options!');
             }
         }
     }
@@ -133,14 +145,21 @@ function solve() {
         }
 
         uploadApp(app) {
-            if (!(app instanceof App) || app instanceof Store) {
+            if (!(app instanceof App)) {
                 throw new Error('App must be an instance of App!');
             }
 
             let exists = this.apps.find(a => a.name === app.name);
             if (typeof exists === 'undefined') {
-                app._uploaded = uploaded();
-                this.apps.push(app);
+                let copyApp;
+                if (app instanceof Store) {
+                    copyApp = new Store(app.name, app.description, app.version, app.rating);
+                    copyApp.apps = app.apps;
+                } else {
+                    copyApp = new App(app.name, app.description, app.version, app.rating);
+                }
+                copyApp._uploaded = uploaded();
+                this.apps.push(copyApp);
             } else {
                 if (exists.version >= app.version) {
                     throw new Error('New version must be greater than old one!');
@@ -170,7 +189,7 @@ function solve() {
             }
 
             return this.apps.filter(function(item) {
-                return item.name.indexOf(pattern) >= 0;
+                return item.name.toLowerCase().indexOf(pattern.toLowerCase()) >= 0;
             }).sort(function(a, b) {
                 var nameA = a.name.toUpperCase(); // ignore upper and lowercase
                 var nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -272,7 +291,7 @@ function solve() {
             if (typeof foundApp === 'undefined') {
                 throw new Error('App is not found in app stores!');
             } else {
-                if (this.apps.indexOf(foundApp) < 0) {
+                if (typeof this.apps.find(a => a.name === foundApp.name) === 'undefined') {
                     this.apps.push(foundApp);
                 }
             }
@@ -293,7 +312,7 @@ function solve() {
         listInstalled() {
             let list = [];
             list = this.apps
-                .filter(app => app instanceof App && !(app instanceof Store))
+                .filter(app => app instanceof App)
                 .sort(function(a, b) {
                     var nameA = a.name.toUpperCase(); // ignore upper and lowercase
                     var nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -316,8 +335,7 @@ function solve() {
                     .filter(a => a instanceof Store)
                     .forEach(store => {
                         let bestInStore = store.apps
-                            .filter(sapp => sapp.name === app.name)
-                            .sort((a, b) => b.version - a.version)[0];
+                            .find(sapp => sapp.name === app.name);
                         if (typeof bestInStore !== 'undefined') {
                             foundApps.push(bestInStore);
                         }
@@ -325,9 +343,7 @@ function solve() {
 
                 let foundApp = foundApps.sort((a, b) => b.version - a.version)[0];
                 if (typeof foundApp !== 'undefined' && foundApp.version > app.version) {
-                    app.version = foundApp.version;
-                    app.description = foundApp.description;
-                    app.rating = foundApp.rating;
+                    app = foundApp;
                 }
             });
             return this;
@@ -364,7 +380,7 @@ setTimeout(function(){
 	console.log( +new Date().getTime());
  }, 3000);
 */
-
+/*
 // test
 
 const s = solve();
@@ -475,3 +491,4 @@ console.log(dev.search('jo'));
 
 console.log('-----------ununstall last store');
 console.log(dev.uninstall('s1'));
+*/
