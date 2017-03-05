@@ -17,8 +17,28 @@ Create a function that takes an id or DOM element and an array of contents
     * In that case, the content of the element **must not be** changed   
 */
 
-module.exports = function () {
+module.exports = function() {
+    return function(element, contents) {
+        var elm;
+        if (typeof element === 'string') {
+            elm = document.getElementById(element);
+        } else if (element instanceof HTMLElement) {
+            elm = element;
+        } else {
+            throw new Error('Object is not HTML Element');
+        }
 
-  return function (element, contents) {
-  };
+        var fragment = document.createDocumentFragment();
+        for (var i = 0; i < contents.length; i++) {
+            var d = contents[i];
+            if (typeof d !== 'string' && typeof d !== 'number') {
+                throw new Error('Content must be number or string!');
+            }
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = d;
+            fragment.appendChild(newDiv);
+        }
+        elm.innerHTML = '';
+        elm.appendChild(fragment);
+    };
 };

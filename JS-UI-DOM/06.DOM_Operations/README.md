@@ -1,4 +1,4 @@
-####Finding HTML Elements
+#### Finding HTML Elements
 
 Method | Description
 --- | ---
@@ -6,7 +6,7 @@ Method | Description
 `document.getElementsByTagName(name)`|	Find elements by tag name
 `document.getElementsByClassName(name)`|	Find elements by class name
 
-####Navigating Between Nodes  
+#### Navigating Between Nodes  
 
 - parentNode
 - childNodes[nodenumber]
@@ -24,7 +24,7 @@ input.value // pokazva teksta v input pole
 element.cloneNode(true) // syzdava deep copie
 ```
 
-####Changing HTML Elements
+#### Changing HTML Elements
 
 Method|	Description
 ---|---
@@ -33,23 +33,24 @@ Method|	Description
 `element.setAttribute(attribute, value)`|	Change the attribute value of an HTML element
 `element.style.property = new style`|	Change the style of an HTML element
 
-####Adding and Deleting Elements
+#### Adding and Deleting Elements
 
 Method|	Description
 ---|---
 `document.createElement(element)`|	Create an HTML element
-`document.removeChild(element)`|	Remove an HTML element
-`document.appendChild(element)`|	Add an HTML element
-`document.replaceChild(element)`|	Replace an HTML element
+`parent.removeChild(element)`|	Remove an HTML element
+`parent.appendChild(element)`|	Add an HTML element at the end
+`parent.replaceChild(element)`|	Replace an HTML element
 `document.write(text)`|	Write into the HTML output stream
+`parent.insertBefore(element)` | Add HTML element at the beginning
 
-####Adding Events Handlers
+#### Adding Events Handlers
 
 Method|	Description
 ---|---
 `document.getElementById(id).onclick = function(){code}`|	Adding event handler code to an onclick event
 
-####Finding HTML Objects
+#### Finding HTML Objects
 
 Property|	Description	DOM
 ---|---

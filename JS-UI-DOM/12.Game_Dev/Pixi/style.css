@@ -1,0 +1,11 @@
+html,
+body,
+div,
+canvas {
+    padding: 0;
+    margin: 0
+}
+
+canvas {
+    box-sizing: border-box;
+}
