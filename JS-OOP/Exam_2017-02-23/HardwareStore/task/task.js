@@ -309,11 +309,11 @@ function solve() {
                     .filter(function(p) {
                         let isProduct = true;
                         if (x.hasOwnProperty('manufacturerPattern')) {
-                            isProduct = p.manufacturer.toLowerCase().indexOf(x.manufacturerPattern.toLowerCase()) >= 0;
+                            isProduct = p.manufacturer.indexOf(x.manufacturerPattern) >= 0;
                             if (isProduct === false) return false;
                         }
                         if (x.hasOwnProperty('modelPattern')) {
-                            isProduct = p.model.toLowerCase().indexOf(x.modelPattern.toLowerCase()) >= 0;
+                            isProduct = p.model.indexOf(x.modelPattern) >= 0;
                             if (isProduct === false) return false;
                         }
                         if (x.hasOwnProperty('type')) {

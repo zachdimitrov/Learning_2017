@@ -27,7 +27,7 @@ function solve() {
         var elm;
         if (typeof selector === 'string') {
             elm = document.getElementById(selector);
-        } else if (element instanceof HTMLElement) {
+        } else if (selector instanceof HTMLElement) {
             elm = selector;
         } else {
             throw new Error('Object is not HTML Element');
