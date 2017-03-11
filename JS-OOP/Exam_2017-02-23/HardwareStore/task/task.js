@@ -1,3 +1,5 @@
+'use strict';
+
 function solve() {
     const MAX_SYMB = 20,
         MIN_SYMB = 1,
