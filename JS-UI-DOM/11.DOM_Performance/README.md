@@ -1,54 +1,11 @@
-<!-- section start -->
-<!-- attr: { hasScriptWrapper:true, id:"title", class:"slide-title" } -->
 # DOM Performance
-## How to write fast client-side JavaScript
-
-<aside class="signature">
-    <p class="signature-course">JavaScript DOM & UI</p>
-    <p class="signature-initiative">Telerik Software Academy</p>
-    <a href="http://academy.telerik.com" class="signature-link">http://academy.telerik.com</a>
-</aside>
-
-<!-- <img class="slide-image" showInPresentation="true" src="./imgs/benchmark.png" style="width: 30%; top: 45%; left: 60%;" /> -->
-
-<!-- section start -->
-<!-- attr: { hasScriptWrapper: true, style: 'font-size: 0.8em' } -->
-# Table of Contents
-- [Creating DOM elements](#creating-elements)
-- [Manipulating DOM elements](#manipulating-elements)
-  - [Adding elements to the DOM](#adding-elements)
-  - [Removing and manipulating elements](#removing-elements)
-  - [Changing styles](#changing-styles)
-- [Querying the DOM](#querying)
-  - [Caching query results](#caching-results)
-  - [Efficient selectors](#efficient-selectors)
-- [Events](#events-performance)
-  - [Delegation](#delegation)
-  - [One-time events](#one-time-events)
-  - [High-rate events](#high-rate-events)
-
-<!-- <img class="slide-image" showInPresentation="true" src="./imgs/toc.png" style="width: 30%; top: 45%; left: 60%;" /> -->
-
-
-<!-- section start -->
-<!-- attr: { id: 'creating-elements',class: 'slide-section', showInPresentation: true } -->
-<!-- # <a id="creating-elements"></a>Creating DOM elements
-## Using cloning for similar elements -->
-
-<!-- attr: { style: 'font-size: 0.85em', showInPresentation: true } -->
-# Using cloning for similar elements
+## Using cloning for similar elements
 - Use `node.cloneNode(true)` (**native**) or `$element.clone()` (**jQuery**) for better performance when creating many similar elements
 - Only when there is a small difference between the elements
   - i.e. when many links have only different `href` and `innerHTML`
 - [Read more](https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode) about `node.cloneNode()`
 - [Read more](https://api.jquery.com/clone/) about `$element.clone()`
 
-<!-- section start -->
-<!-- attr: { id: 'manipulating-elements', class: 'slide-section', hasScriptWrapper: true, showInPresentation: true } -->
-<!-- # <a id="manipulating-elements"></a>Manipulating DOM elements
-## Adding, removing and changing elements -->
-
-<!-- attr: { id:'adding-elements' } -->
 # <a id="adding-elements"></a>Adding elements to the DOM
 - Do not directly append a lot of elements to the DOM, this will trigger a lot of browser redraws
 - Changes to the DOM can trigger a browser redraws
@@ -56,8 +13,6 @@
   - Change of certain attributes
   - Change of styles
 
-<!-- attr: { showInPresentation: true } -->
-<!-- # Adding elements to the DOM -->
 - The following will trigger `1000` browser redraws:
 
 ```js
@@ -72,7 +27,6 @@ for(var i = 0; i < count; i += 1) {
 }
 ```
 
-<!-- attr: { style: 'font-size: 0.9em' } -->
 # Document fragments
 - Use `DocumentFragment` to minimize redraws when adding elements to the DOM
   - The following code will trigger a single browser redraws:
@@ -88,7 +42,6 @@ for(var i = 0; i < count; i += 1) {
 container.appendChild(docFragment);
 ```
 
-<!-- attr: { hasScriptWrapper: true } -->
 # Appending to containers
 - _Example_ with jQuery:
 
@@ -104,8 +57,6 @@ for(var i = 0; i < count; i += 1){
 $list.appendTo(container);
 ```
 
-<!-- attr: { id: 'removing-elements', style: 'font-size: 0.9em' } -->
-# <a id="removing-elements"></a>Removing and manipulating elements
 - Sometimes detaching DOM elements before manipulating them can boost performance by forcing fewer browser redraws:
 
 ```js
@@ -115,10 +66,8 @@ var manyItems = $('#many-items-container').detach();
 manyItems.appendTo(document.body);
 ```
 
-<!-- attr: { id: 'changing-styles', hasScriptWrapper: true } -->
-# <a id="changing-styles"></a>Changing styles
 - Avoid setting inline styles where possible
-  - Add or remove classes when you want to change the styles
+- Add or remove classes when you want to change the styles
 
 ```css
 .nav-link {
@@ -132,8 +81,6 @@ manyItems.appendTo(document.body);
 $('#dynamic-menu').find('a').addClass('nav-link');
 ```
 
-<!-- attr: { hasScriptWrapper: true, showInPresentation: true, style: 'font-size: 0.9em' } -->
-<!-- # Changing styles -->
 - When setting multiple properties as inline style:
 
 ```js
@@ -152,13 +99,6 @@ element.style.width = '20%';
 element.style.margin = '5px';
 ```
 
-<!-- section start -->
-<!-- attr: { id: 'querying',class: 'slide-section', showInPresentation: true } -->
-<!-- # <a id="querying"></a>Querying the DOM
-## Caching and efficient selectors -->
-
-<!-- attr: { id: 'caching-results', style: 'font-size: 0.8em' } -->
-# <a id="caching-results"></a>Caching query results
 - If you use the same queried elements repeatedly, cache them in a variable or property
 - Suppose there are **panels** on a web page and a **button which hides them** when clicked
 - _Example_ **without caching**:
@@ -176,8 +116,6 @@ hidePanelsBtn.addEventListener('click', function () {
 });
 ```
 
-<!-- attr: { showInPresentation: true, style: 'font-size: 0.8em' } -->
-<!-- # Caching query results -->
 - _Example_ **with caching**:
   - Better performance - the DOM doesn't get queried on each button click
 
@@ -196,20 +134,14 @@ hidePanelsBtn.addEventListener('click', function () {
 });
 ```
 
-<!-- attr: { id: 'efficient-selectors', style: 'font-size: 0.9em' } -->
-# <a id="efficient-selectors"></a>Efficient selectors
 - CSS selectors are interpreted from right to left
-  - The following code will first select all `li` elements and then return only those who have a parent with
- `names-list` id
+- The following code will first select all `li` elements and then return only those who have a parent with `names-list` id
 
 ```js
 // potentially very slow
 var nameItems = document.querySelectorAll('#names-list li');
 ```
 
-
-<!-- attr: { showInPresentation: true } -->
-<!-- # Efficient selectors -->
 - Refactor and improve the previous sample's performance
   - The following code will search by id - a very fast operation, and then simply get all children of the result
 
@@ -218,8 +150,6 @@ var namesList = document.querySelector('#names-list'),
     nameItems = namesList.children;
 ```
 
-<!-- attr: { showInPresentation: true } -->
-<!-- # Efficient selectors -->
 - Try to explain the performance of the following statemenets(assume they query the same HTML and return the same result):
 
 ```js
@@ -229,10 +159,6 @@ $('#some-id .some-class li.another-class');
 
 $('#some-id').find('.another-class');
 ```
-
-
-<!-- attr: { showInPresentation: true } -->
-<!-- # Efficient selectors -->
 
 - Explanation:
 
@@ -248,9 +174,6 @@ $('#some-id .some-class li.another-class');
 $('#some-id').find('.another-class');
 ```
 
-
-<!-- attr: { showInPresentation: true } -->
-<!-- # Efficient selectors -->
 - Avoid being overly specific when unneeded
 
 ```js
@@ -261,16 +184,6 @@ $('.navigation ul li a.nav-link');
 $('.navigation .nav-link');
 ```
 
-
-<!-- section start -->
-<!-- attr: { id:'events-performance', class: 'slide-section', showInPresentation: true } -->
-<!-- # <a id="events-performance"></a>Events
-## Delegation, one-time events, high-rate events -->
-
-
-
-
-<!-- attr: { id: 'delegation', hasScriptWrapper: true, style: 'font-size: 0.8em' } -->
 # <a id="delegation"></a>Event delegation
 - If many elements inside a common container have the same event, attach the event to the common container
 - The following code will attach an event handler to every table element:
@@ -287,11 +200,6 @@ for(var i = 0, len = calendarButtons.length; i < len; i += 1) {
 }
 ```
 
-
-
-
-<!-- attr: { hasScriptWrapper: true, style: 'font-size: 0.9em', showInPresentation: true } -->
-<!-- # Event delegation -->
 - The following code will attach a handler to the table itself and delegate the event to the clicked table element:
 
 ```js
@@ -303,13 +211,9 @@ calendar.addEventListener('click', function (event) {
 });
 ```
 
-
-
-<!-- attr: { id: 'one-time-events', hasScriptWrapper: true, style: 'font-size: 0.8em' } -->
-# <a id="one-time-events"></a>One-time events
 - When an event is supposed to be raised a single time and no more, it's handler can be removed after it's execution
-  - Event handlers can be removed with `node.removeEventListener()`
-  - One-time events can be created with jQuery - `$element.one()`
+- Event handlers can be removed with `node.removeEventListener()`
+- One-time events can be created with jQuery - `$element.one()`
 
 ```js
 someElement.addEventListener('click', function () {
@@ -320,9 +224,6 @@ someElement.addEventListener('click', function () {
 });
 ```
 
-
-
-<!-- attr: { id: 'high-rate-events', style: 'font-size: 0.8em' } -->
 # <a id="high-rate-events"></a>High-rate events
 - Events like **scrolling**, **mousemove**, **resizing** can fire at a high rate- if heavy operations are executed on every event raise, this can lead to performance problems
 
@@ -332,10 +233,6 @@ document.addEventListener('mousemove', function () {
 });
 ```
 
-
-
-<!-- attr: { style: 'font-size: 0.8em', showInPresentation: true } -->
-<!-- # High-rate events -->
 - A possible solution is to attach event handlers that execute after a number of event fires or after a time interval
 
 ```js
@@ -356,10 +253,6 @@ function createIntervalFunction(func, interval) {
 }
 ```
 
-
-
-<!-- attr: { showInPresentation: true } -->
-<!-- # High-rate events -->
 - When the event fires, the handling function will be executed only once every `250ms`
 
 ```js
@@ -369,8 +262,3 @@ var handler = createIntervalFunction(function () {
 
 document.addEventListener('mousemove', handler);
 ```
-
-<!-- section start -->
-<!-- attr: { class: 'slide-section', showInPresentation: true } -->
-<!-- # DOM Performance
-## Questions? -->

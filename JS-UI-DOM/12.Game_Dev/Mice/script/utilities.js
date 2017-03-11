@@ -36,6 +36,7 @@ function keyboard(keyCode) {
     return key;
 }
 
+/*
 // collision detection
 function collide(r1, r2) {
     //Define the variables we'll need to calculate
@@ -85,4 +86,5 @@ function collide(r1, r2) {
 
     //`hit` will be either `true` or `false`
     return hit;
-}
+};
+*/

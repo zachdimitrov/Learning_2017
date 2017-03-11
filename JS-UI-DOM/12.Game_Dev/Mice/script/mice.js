@@ -183,7 +183,7 @@ var states = {
 
 function moveHero() {
     if (b.hit(white, mapItems.children[10])) {
-        white.x = 385;
+        white.x = 385 - 3 * 48;
         white.y = 289;
     }
     if (b.hit(white, mapItems.children[33])) { //52
