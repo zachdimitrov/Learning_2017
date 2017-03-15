@@ -26,7 +26,7 @@
 - Community Support 
   - Large community of developers and geeks
 
-# How to Add jQuery<br/>to a Web Site?
+# How to Add jQuery to a Web Site?
 - Download jQuery files from [jquery.com](http://www.jquery.com)
 - Self hosted
   - You can choose to self host the **.js** file
@@ -177,7 +177,7 @@ var content = document.createElement("div");
 var $content = $(content);
 ```
 
-# Properties of<br/>jQuery Elements
+# Properties of jQuery Elements
 - jQuery elements extend regular DOM elements
 - Methods for altering the elements
   - `jQuery.css("color", "#f3f")`
