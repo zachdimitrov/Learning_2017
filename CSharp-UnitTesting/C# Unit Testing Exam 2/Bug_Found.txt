@@ -1,0 +1,5 @@
+// Where is the bug :)
+PackageRepository.cs
+public IEnumerable<IPackage> GetAll()
+this.AddPackage();
+Temporary Method for test not removed!

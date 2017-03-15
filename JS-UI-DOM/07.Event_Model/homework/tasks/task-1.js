@@ -37,19 +37,19 @@ function solve() {
             throw new Error('Nothing is selected!');
         }
 
-        let all = elm.childNodes;
+        var all = elm.childNodes;
 
-        for (let i = 0; i < all.length; i++) {
-            let node = all[i];
+        for (var i = 0; i < all.length; i++) {
+            var node = all[i];
             if (node.className === 'button') {
                 node.innerHTML = 'hide';
             }
         }
 
         elm.addEventListener('click', function(ev) {
-            let button = ev.target;
+            var button = ev.target;
             if (button.className === 'button') {
-                let nextContent = button.nextElementSibling;
+                var nextContent = button.nextElementSibling;
                 if (nextContent.className === 'content' && nextContent.nextElementSibling.className === 'button') {
                     button.innerHTML = button.innerHTML === 'hide' ? 'show' : 'hide';
                     nextContent.style.display = nextContent.style.display === 'none' ? '' : 'none';

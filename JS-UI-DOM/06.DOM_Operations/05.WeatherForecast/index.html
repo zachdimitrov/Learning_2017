@@ -5,16 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Forecast</title>
+    <title>5 Day Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./script/handlebars-v4.0.5.js"></script>
 </head>
 
 <body>
+    <!-- CONTAINER -->
+    <div id="toselect">
+        <form>
+            Select city
+            <select id="selected" name="city">
+                <option value="sofia">Sofia</option>
+                <option value="plovdiv">Plovdiv</option>
+                <option value="pleven">Pleven</option>
+                <option value="burgas">Burgas</option>
+                <option value="varna">Varna</option>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+
     <div id="wrapper"></div>
-    <script src="getJson.js"></script>
-    <script>
-        getForecast();
+
+    <!-- TEMPLATE 1 -->
+    <script id="entry-template" type="text/x-handlebars-template">
+        <h2>Weather forecast for <strong>{{city.name}}</strong></h2>
+        <div id="under-top">
+            Period from <strong>{{cut list.0.dt_txt 3}}</strong> to <strong>{{cut list.39.dt_txt 3}}</strong>
+        </div>
+        <ul id="weather-list">
+            {{#each list}}
+            <li class='lists' data-index="{{@index}}">
+                <p class="date">{{date dt_txt}}</p>
+                <img src="http://openweathermap.org/img/w/{{weather.0.icon}}.png" alt="">
+                <p><span class="label">temp: </span><strong>{{temp main.temp_min}}</strong></p>
+            </li>
+            {{/each}}
+        </ul>
     </script>
+
+    <!-- TEMPLATE 2 -->
+    <script id="details-template" type="text/x-handlebars-template">
+        <h3>Detailed info for <strong>{{cut dt_txt 3}}</strong></h3>
+        <img src="http://openweathermap.org/img/w/{{weather.0.icon}}.png" alt="">
+        <p class="detinfo">Maximal temperature: <span class="imp">{{temp main.temp_min}}</span></p>
+        <p class="detinfo">Minimal temperature: <span class="imp">{{temp main.temp_min}}</span></p>
+        <p class="detinfo">Expected: <span class="imp">{{weather.0.description}}</span></p>
+        <p class="detinfo">Clouds: <span class="imp">{{clouds.all}}%</span></p>
+        <p class="detinfo">Rain: <span class="imp">{{percent rain.3h}}</span></p>
+        <p class="detinfo">Snow: <span class="imp">{{percent snow.3h}}</span></p>
+        <p class="detinfo">Wind: <span class="imp">{{wind.speed}}m/s, from {{direction wind.deg}}</span></p>
+        <p class="detinfo">Humidity: <span class="imp">{{main.humidity}}%</span></p>
+        <p class="detinfo">Pressure: <span class="imp">{{main.pressure}} hpa</span></p>
+    </script>
+
+    <!-- JS -->
+    <!--<script src="./script/sampleDataForTests.js"></script>-->
+    <script src="./script/getForecast.js"></script>
+    <script src="./script/processData.js"></script>
 </body>
 
 </html>
