@@ -32,7 +32,7 @@ $("ul.menu li")
 $element.on("event", function(){}); // adds event
 $elm.val(); // gets value of input
 $elm.val("value"]); // sets value of input
-$(function() {}); // executed when page is loaded
+$(function() {}); // executed when page is loaded - window.on("load")
 
 // selection
 $element.prev(); // selects previous element
@@ -43,6 +43,7 @@ $element.parent(); // selects parent
 $element.parents("selector"); // searchest for the closest parent 
 $element.closest("selector"); // not very useful
 $element.eq(3); // selects element with index
+$list.find("li"); // selects in current element (not whole html)
 
 // class manipulation
 $element.hasClass("class"); // checks for class
@@ -69,6 +70,9 @@ $el1.append(el2); // appends el2 at the end of el1
 $el1.appendTo(el2); // appends el1 at the end of el2
 $("<h1/>").appendTo("body"); // dynamically create element and add
 $(".btn").remove(); // removes selected elements
+
+// iterating
+$items.each(function(index, node) { // do sth. });
 ```
 
 #### Use events with jQuery
@@ -82,5 +86,35 @@ $(".btn").on("click", function() {
     $heading.addClass("hidden");
   }
   $(this).remove(); // will remove clicked button
+});
+```
+usung input
+```html
+<div class="content">Content</div>
+<input type="text" class="tb-username" />
+<p class="result"><a class="btn">Delete</a></p>
+```
+```js
+// set style
+$(".content").on("enter", function() {
+  $(this).css("background-color", "green")
+});
+
+// clear inline styles
+$(".content").on("mouseout", function() {
+  $(this).css("background-color", "")
+});
+
+// use value of input
+$(".tb-username").on("input", function() {
+  var $this = $(this);
+  $(".result").html($this.val());
+});
+
+// invoke event children elements 
+$(".result").on("click", ".btn", function() {
+   $(this) // (this) is the .btn element
+    .parents(".result")
+    .remove();
 });
 ```

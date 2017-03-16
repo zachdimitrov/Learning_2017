@@ -17,6 +17,7 @@ function createCalendar(selector, events) {
     header.style.padding = '0 20px';
     header.style.textAlign = 'center';
     header.style.margin = '0';
+    header.className = 'date-header';
     header.style.backgroundColor = 'lightgrey';
 
     //hack to fix the jumping of the empty boxes
@@ -25,7 +26,7 @@ function createCalendar(selector, events) {
 
     div.appendChild(header);
     div.appendChild(span);
-    var firstDate = new Date(2017, 2, 1);
+    var firstDate = new Date(2014, 5, 1);
 
     for (let i = 0; i < 31; i++) {
         var newDate = addDays(firstDate, i);
@@ -39,6 +40,26 @@ function createCalendar(selector, events) {
         let event = events[i];
         allDates[event.date - 1].getElementsByTagName('span')[0].innerHTML += event.hour + ' ' + event.title;
     }
+
+    element.addEventListener('mouseover', function(ev) {
+        if (ev.target.className === 'date') {
+            ev.target.firstElementChild.style.backgroundColor = 'yellow';
+        }
+    });
+    element.addEventListener('click', function(ev) {
+        if (ev.target.className === 'date') {
+            // ev.target.style.backgroundColor === '' ? ev.target.style.backgroundColor = 'lightgreen' : ev.target.style.backgroundColor = '';
+            for (let i = 0; i < allDates.length; i++) {
+                allDates[i].style.backgroundColor = '';
+            }
+            ev.target.style.backgroundColor = 'lightgreen';
+        }
+    });
+    element.addEventListener('mouseout', function(ev) {
+        if (ev.target.className === 'date') {
+            ev.target.firstElementChild.style.backgroundColor = 'lightgrey';
+        }
+    });
 }
 
 function addDays(date, days) {
