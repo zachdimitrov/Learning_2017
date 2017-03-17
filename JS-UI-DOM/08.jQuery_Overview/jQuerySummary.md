@@ -73,9 +73,12 @@ $(".btn").remove(); // removes selected elements
 
 // iterating
 $items.each(function(index, node) { // do sth. });
+$items.length // returns elements count
 ```
 
 #### Use events with jQuery
+
+elements must be added to DOM to use events
 ```js
 $(".btn").on("click", function() {
   var $heading = $("h1");
@@ -88,7 +91,7 @@ $(".btn").on("click", function() {
   $(this).remove(); // will remove clicked button
 });
 ```
-usung input
+other examples
 ```html
 <div class="content">Content</div>
 <input type="text" class="tb-username" />
@@ -117,4 +120,48 @@ $(".result").on("click", ".btn", function() {
     .parents(".result")
     .remove();
 });
+```
+
+#### AJAX with jQuery
+
+```js
+var url = "https://trello.com/c/08jCJ0zI/112-sgs-1701-negley-development.json"
+$.getJSON(url, function(data) {
+  console.log(data);
+});
+```
+all methods
+```js
+$.ajax(options)
+$.get(url)
+$.post(url)
+$(".wrapper").load(url); // zarejda html-a ot edna stranica v druga
+
+```
+
+#### jQuery plugins
+
+most famous plugin - [**jQuery UI**](https://jqueryui.com/)
+
+examples
+```js
+$("#tabs-holder").tabs(); // mnogo plugins imat nujda i ot CSS
+$("#grid").sortable();
+```
+
+need to load plugin right after jQuery load
+```html
+<script src="myPlugin.js"></script>
+```
+
+create custom plugin
+```js
+(function($) {
+  $.fn.alertMe = function(this) {
+    this.on("click", function(){
+      alert("gosho");
+    });
+  };
+});
+
 ```
