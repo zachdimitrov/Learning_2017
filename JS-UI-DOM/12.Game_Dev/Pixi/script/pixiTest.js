@@ -29,7 +29,7 @@ renderer.backgroundColor = 0xf2f2f2;
 // resize canvas
 //renderer.resize(512, 350);
 
-renderer.view.style.position = "absolute"
+renderer.view.style.position = "absolute";
 renderer.view.style.width = window.innerWidth + "px";
 renderer.view.style.height = window.innerHeight + "px";
 renderer.view.style.display = "block";

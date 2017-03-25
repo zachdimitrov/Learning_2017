@@ -24,7 +24,14 @@ function createPhysicalBody(options) {
     }
 
     function collidesWith(otherBody) {
-
+        var thisRadius = (this.width + this.height) / 4,
+            otherRadius = (otherBody.width + otherBody.height) / 4,
+            x1 = this.coords.x + this.width / 2,
+            y1 = this.coords.y + this.height / 2,
+            x2 = otherBody.coords.x + otherBody.width / 2,
+            y2 = otherBody.coords.y + otherBody.height / 2,
+            distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        return distance <= thisRadius + otherRadius;
     }
 
     function decelerate(gravity) {
@@ -50,16 +57,16 @@ function createPhysicalBody(options) {
     }
 
     function gravity(gravity) {
-        let floor = this.field.y;
-        if (this.coords.y === floor - this.height) {
+        let floor = this.field.y - this.height / 2;
+        if (this.coords.y === floor) {
             return this;
         }
-        if (this.coords.y > floor - this.height) {
-            this.coords.y = floor - this.height;
+        if (this.coords.y > floor) {
+            this.coords.y = floor;
             this.speed.y = 0;
             return this;
         }
-        if (this.coords.y < floor - this.height) {
+        if (this.coords.y < floor) {
             this.speed.y += gravity;
         }
         return this;

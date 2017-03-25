@@ -13,8 +13,23 @@ function createSprite(options) {
     };
 
     function render(drawCoord, clearCoord) {
-        this.context.clearRect(clearCoord.x, clearCoord.y, this.width, this.height);
-        this.context.drawImage(this.spriteSheet, this.frameIndex * this.width, 0, this.width, this.height, drawCoord.x, drawCoord.y, this.width, this.height);
+        this.context.clearRect(
+            clearCoord.x,
+            clearCoord.y,
+            this.width,
+            this.height);
+
+        this.context.drawImage(
+            this.spriteSheet,
+            this.frameIndex * this.width,
+            0,
+            this.width,
+            this.height,
+            drawCoord.x,
+            drawCoord.y,
+            this.width,
+            this.height);
+
         return this;
     }
 

@@ -1,15 +1,23 @@
 window.addEventListener('load', function() {
     var container = document.getElementById('content'),
-        canvas = document.createElement('canvas');
-    canvas.id = "canvas";
+        canvas = document.createElement('canvas'),
+        pokeballCanvas = document.createElement('canvas');
+    canvas.id = "player-canvas";
     canvas.width = 800;
     canvas.height = 500;
-    container.appendChild(canvas),
-        gravityPull = 0.1,
+    container.appendChild(canvas);
+
+    pokeballCanvas.id = "pokeball-canvas";
+    pokeballCanvas.width = 800;
+    pokeballCanvas.height = 500;
+    container.appendChild(pokeballCanvas);
+
+    var gravityPull = 0.2,
         friction = 0;
 
     // var playerCanvas = document.getElementById("player-canvas");
     var playerContext = canvas.getContext('2d'),
+        pokeballContext = pokeballCanvas.getContext('2d'),
         playerImg = document.getElementById("pikachu-sprite"),
         pokeballImg = document.getElementById("pokeball-sprite");
 
@@ -19,7 +27,7 @@ window.addEventListener('load', function() {
         loopTicksCount = 0,
         px = 0,
         py = 0,
-        speedX = 5,
+        speedX = 3,
         speedY = 5;
 
     var pikachu = createSprite({
@@ -31,33 +39,40 @@ window.addEventListener('load', function() {
         loopTicksPerFrame: 5,
     });
     var pikachuBody = createPhysicalBody({
-        coords: { x: 0, y: 0 },
+        coords: { x: 20, y: canvas.height - pikachu.height },
         speed: { x: 0, y: 0 },
         width: pikachu.width,
         height: pikachu.height,
         field: { x: canvas.width, y: canvas.height },
     });
 
-    var pokeball = createSprite({
-        spriteSheet: pokeballImg,
-        context: playerContext,
-        width: pokeballImg.width / 18,
-        height: pokeballImg.height,
-        framesCount: 18,
-        loopTicksPerFrame: 5,
-    });
-    var pokeballBody = createPhysicalBody({
-        coords: { x: 100, y: 0 },
-        speed: { x: 0, y: 0 },
-        width: pokeball.width,
-        height: pokeball.height,
-        field: { x: canvas.width, y: canvas.height }
-    })
+    function createPokeball() {
+        var pokeball = createSprite({
+            spriteSheet: pokeballImg,
+            context: pokeballContext,
+            width: pokeballImg.width / 18,
+            height: pokeballImg.height,
+            framesCount: 18,
+            loopTicksPerFrame: 5,
+        });
+        var pokeballBody = createPhysicalBody({
+            coords: { x: canvas.width, y: canvas.height - pokeball.height },
+            speed: { x: -3, y: 0 },
+            width: pokeball.width,
+            height: pokeball.height,
+            field: { x: canvas.width, y: canvas.height }
+        })
+
+        return {
+            sprite: pokeball,
+            body: pokeballBody
+        }
+    }
 
     window.addEventListener('keydown', function(ev) {
         console.log(ev.which);
         friction = 0;
-        let pikachuGround = canvas.height - pikachuBody.height;
+        let pikachuGround = canvas.height - pikachu.height;
         switch (ev.which) {
             case 37:
                 if (pikachuBody.coords.x <= 0) {
@@ -68,7 +83,7 @@ window.addEventListener('load', function() {
                 pikachuBody.speed.x = -speedX;
                 break;
             case 38:
-                if (pikachuBody.coords.y < pikachuGround) {
+                if (pikachuBody.coords.y < pikachuGround - pokeballImg.height || pikachuBody.speed.y > 0) {
                     return;
                 }
                 pikachuBody.speed.y = -speedY;
@@ -87,32 +102,46 @@ window.addEventListener('load', function() {
     });
 
     window.addEventListener('keyup', function(ev) {
-        switch (ev.which) {
-            case 37:
-                friction = 0.1;
-                break;
-            case 39:
-                friction = 0.1;
-                break;
-            default:
-                break;
-        }
+        friction = gravityPull;
     });
+    var pokeballs = [];
 
     function gameLoop() {
         var lastPikachuCoords = pikachuBody
             .gravity(gravityPull)
             .decelerate(friction)
-            .move(),
-            lastPokeballCoords = pokeballBody.move();
+            .move();
 
         pikachu
             .render(pikachuBody.coords, lastPikachuCoords)
             .update();
 
-        pokeball
-            .render(pokeballBody.coords, lastPokeballCoords)
-            .update();
+
+        for (i = 0; i < pokeballs.length; i += 1) {
+            var pokeball = pokeballs[i];
+            if (pokeball.body.coords.x < pokeball.body.width.x) {
+                pokeballs.splice(i, 1);
+                console.log(pokeballs.length);
+                continue;
+            }
+            var lastPokeballCoords = pokeball.body.move();
+
+            pokeball.sprite
+                .render(pokeball.body.coords, lastPokeballCoords)
+                .update();
+
+            if (pikachuBody.collidesWith(pokeball.body)) {
+                playerContext.drawImage(
+                    document.getElementById("dead-player"),
+                    100, 200
+                );
+                return;
+            }
+        }
+
+        if (Math.random() < 0.003) {
+            pokeballs.push(createPokeball());
+        }
         window.requestAnimationFrame(gameLoop);
     }
 

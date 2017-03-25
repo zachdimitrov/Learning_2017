@@ -37,6 +37,7 @@ $(function() {}); // executed when page is loaded - window.on("load")
 // selection
 $element.prev(); // selects previous element
 $element.next(); // selects next element
+$element.nextAll(seector);
 $element.first(); // first child
 $element.last(); // last child
 $element.parent(); // selects parent

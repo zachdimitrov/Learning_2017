@@ -179,7 +179,7 @@ var states = {
         white.vx = 0;
         white.vy = 0;
     }
-}
+};
 
 function moveHero() {
     if (b.hit(white, mapItems.children[10])) {

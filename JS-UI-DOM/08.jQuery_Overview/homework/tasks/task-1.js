@@ -20,9 +20,30 @@ Create a function that takes a selector and COUNT, then generates inside a UL wi
 */
 
 function solve() {
-  return function (selector, count) {
-   
-  };
-};
+    return function(selector, count) {
+        var $element, i;
+        if (typeof count !== 'number' || count < 1) {
+            throw new Error('Invalid count!');
+        }
+        if (typeof selector === 'string') {
+            $element = $(selector);
+        } else {
+            throw new Error('Selector is not a string!');
+        }
+
+        if (typeof $element !== 'undefined') {
+            $('<ul/>')
+                .addClass('items-list')
+                .appendTo($element);
+
+            for (i = 0; i < count; i++) {
+                $('<li/>')
+                    .addClass('list-item')
+                    .html('List item #' + i)
+                    .appendTo('.items-list');
+            }
+        }
+    };
+}
 
 module.exports = solve;
