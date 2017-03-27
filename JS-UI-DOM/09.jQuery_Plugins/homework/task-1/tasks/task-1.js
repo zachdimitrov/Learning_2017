@@ -1,19 +1,15 @@
 function solve() {
     return function(selector) {
         var $options = $(selector + " option");
-        var $select = $("<select/>")
-            .css("display", "none")
-            .attr("id", $(selector).attr("id"))
-            .append($options);
-
-        var $newSelect = $("<div/>")
+        var $select = $(selector).hide();
+        var $dropDown = $("<div/>")
             .addClass("options-container")
             .css({ "position": "absolute", "display": "none" });
 
         var $current = $("<div/>")
             .addClass("current")
             .attr("data-value", "")
-            .html("Option 1");
+            .html("Select a value");
 
         for (var i = 0; i < $options.length; i++) {
             var $element = $($options[i]);
@@ -23,34 +19,33 @@ function solve() {
                 .attr("data-index", i)
                 .html($element.html());
 
-            $newSelect.append($newOption);
+            $dropDown.append($newOption);
         }
 
         var $mainContainer = $("<div/>")
             .addClass("dropdown-list")
             .append($select)
             .append($current)
-            .append($newSelect);
+            .append($dropDown);
 
-        $(selector)
-            .after($mainContainer)
-            .remove();
+        $("body").append($mainContainer);
 
         $current.on("click", function() {
             var $cur = $(this);
             var storedValue = $cur.html();
             $cur.html("Select a value");
-            if ($newSelect.css("display") === "none") {
-                $newSelect.css("display", "block");
+            if ($dropDown.css("display") === "none") {
+                $dropDown.css("display", "block");
             } else {
-                $newSelect.css("display", "none");
+                $dropDown.css("display", "none");
                 $cur.html(storedValue);
             }
         });
 
         $(".dropdown-item").on("click", function() {
             $current.html($(this).html());
-            $newSelect.css("display", "none");
+            $select.val($(this).attr('data-value'));
+            $dropDown.css("display", "none");
         });
     };
 }

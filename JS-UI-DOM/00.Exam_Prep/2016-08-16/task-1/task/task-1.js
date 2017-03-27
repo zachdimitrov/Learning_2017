@@ -2,91 +2,36 @@
 
 function solve() {
     return function(selector, initialSuggestions) {
-        "use strict";
-        var element = document.querySelector(selector);
+        var element = document.querySelector(selector),
+            suggList = document.getElementsByClassName("suggestions-list")[0],
+            input = document.getElementsByClassName("tb-pattern")[0],
+            templateLi = document.createElement("li"),
+            templateA = document.createElement("a"),
+            arr;
 
-        var tbPattern = element.getElementsByClassName("tb-pattern")[0];
-        var suggestionItems = element.getElementsByClassName("suggestion");
-        var suggestionsList = element.getElementsByClassName("suggestions-list")[0];
-        var btnAdd = element.getElementsByClassName("btn-add")[0];
-        var pattern = "";
-
-        var suggestionItemTemplate = document.createElement("li"),
-            suggestionLinkTemplate = document.createElement("a");
-
-        suggestionItemTemplate.className = "suggestion";
-
-        suggestionLinkTemplate.className = "suggestion-link";
-        suggestionLinkTemplate.href = "#";
-        suggestionItemTemplate.appendChild(suggestionLinkTemplate);
-        suggestionItemTemplate.style.display = "none";
-
-        var usedSuggestions = {};
+        templateLi.className = "suggestion";
+        templateLi.style.display = "none";
+        templateA.href = "#";
+        templateA.className = "suggestion-link";
+        templateLi.appendChild(templateA);
 
         initialSuggestions = initialSuggestions || [];
 
-        for (var i = 0, len = initialSuggestions.length; i < len; i += 1) {
-            var suggestionString = initialSuggestions[i];
-            if (!usedSuggestions[suggestionString.toLowerCase()]) {
-                suggestionLinkTemplate.innerHTML = suggestionString;
-                var newSuggestion = suggestionItemTemplate.cloneNode(true);
-                suggestionsList.appendChild(newSuggestion);
-                usedSuggestions[suggestionString.toLowerCase()] = true;
-            }
-        }
-
-        suggestionsList.addEventListener("click", function(ev) {
-            var btn = ev.target,
-                text;
-            if (btn.className.indexOf("suggestion-link") < 0) {
-                return;
-            }
-
-            text = btn.innerHTML;
-            tbPattern.value = text;
-            ev.preventDefault();
+        initialSuggestions.forEach(function(s) {
+            var listItem = templateLi.cloneNode(true);
+            var link = listItem.getElementsByClassName("suggestion-link")[0];
+            link.innerHTML = s;
+            suggList.appendChild(listItem);
         });
 
-        suggestionsList.style.display = "none";
-
-        btnAdd.addEventListener("click", function() {
-            var value = tbPattern.value;
-            tbPattern.value = "";
-
-            suggestionsList.style.display = "none";
-
-            if (!usedSuggestions[value.toLowerCase()]) {
-                suggestionLinkTemplate.innerHTML = value;
-                suggestionsList.appendChild(suggestionItemTemplate.cloneNode(true));
-                usedSuggestions[value.toLowerCase()] = true;
-            }
-        });
-
-        tbPattern.addEventListener("input", function() {
-            var suggestionItems = element.getElementsByClassName("suggestion");
-
-            var len = suggestionItems.length,
-                suggestionItem,
-                suggestionText,
-                i;
-
-
-            pattern = this.value.toLowerCase();
-
-            if (pattern === "") {
-                suggestionsList.style.display = "none";
-                return;
-            }
-
-            suggestionsList.style.display = "";
-
-            for (i = 0; i < len; i += 1) {
-                suggestionItem = suggestionItems[i];
-                suggestionText = suggestionItem.getElementsByClassName("suggestion-link")[0];
-                if (suggestionText.innerHTML.toLowerCase().indexOf(pattern) >= 0) {
-                    suggestionItem.style.display = "";
-                } else {
-                    suggestionItem.style.display = "none";
+        input.addEventListener("input", function(ev) {
+            var x = this.value.toLowerCase();
+            console.log(x);
+            var suggestions = document.getElementsByClassName("suggestion-link");
+            for (var i = 0; i < suggestions.length; i++) {
+                var s = suggestions[i];
+                if (s.innerHTML.indexOf(x) >= 0) {
+                    s.parentNode.style.display = "";
                 }
             }
         });
