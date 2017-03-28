@@ -2,39 +2,28 @@
 
 function solve() {
     return function(selector, initialSuggestions) {
-        var element = document.querySelector(selector),
-            suggList = document.getElementsByClassName("suggestions-list")[0],
-            input = document.getElementsByClassName("tb-pattern")[0],
-            templateLi = document.createElement("li"),
-            templateA = document.createElement("a"),
-            arr;
+        var container = document.querySelector(selector),
+            input = container.getElementsByClassName("tb-pattern")[0],
+            button = container.getElementsByClassName("btn-add")[0],
+            list = container.getElementsByClassName("suggestion-list");
 
-        templateLi.className = "suggestion";
-        templateLi.style.display = "none";
-        templateA.href = "#";
-        templateA.className = "suggestion-link";
-        templateLi.appendChild(templateA);
+        var itemTemplate = document.createElement("li");
+        itemTemplate.className = "suggestion";
+        var itemLinkTemplate = document.createElement("a");
+        itemLinkTemplate.href = "#";
+        itemLinkTemplate.className = "suggestion-link";
+        itemTemplate.appendChild(itemLinkTemplate);
 
         initialSuggestions = initialSuggestions || [];
+        for (var i = 0; i < initialSuggestions.length; i++) {
+            var suggestion = initialSuggestions[i];
+            var li = itemTemplate.cloneNode(true);
+            var item = li.getElementsByClassName("suggestion-link")[0];
+            item.innerHTML = suggestion;
+            container.appendChild(li);
+        }
 
-        initialSuggestions.forEach(function(s) {
-            var listItem = templateLi.cloneNode(true);
-            var link = listItem.getElementsByClassName("suggestion-link")[0];
-            link.innerHTML = s;
-            suggList.appendChild(listItem);
-        });
 
-        input.addEventListener("input", function(ev) {
-            var x = this.value.toLowerCase();
-            console.log(x);
-            var suggestions = document.getElementsByClassName("suggestion-link");
-            for (var i = 0; i < suggestions.length; i++) {
-                var s = suggestions[i];
-                if (s.innerHTML.indexOf(x) >= 0) {
-                    s.parentNode.style.display = "";
-                }
-            }
-        });
     };
 }
 
