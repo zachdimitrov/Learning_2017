@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./bower_components/jquery-ui/themes/vader/jquery-ui.css">
+    <title>SystemJS Test</title>
+</head>
+
+<body>
+    <nav>
+        <div id="main-controls">
+            <input type="text" id="person-name">
+            <input type="number" id="person-age">
+            <button id="btn-add">Add Person</button>
+            <button id="btn-all">Get All</button>
+        </div>
+    </nav>
+
+    <div id="list-all"></div>
+
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./system-config.js"></script>
+    <script>
+        System.import("main");
+    </script>
+</body>
+
+</html>

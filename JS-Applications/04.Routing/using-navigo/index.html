@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./bower_components/jquery-ui/themes/blitzer/jquery-ui.css">
+    <title>Routing with Navigo</title>
+    <script src="./node_modules/navigo/lib/navigo.js"></script>
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./system-config.js"></script>
+    <script>
+        System.import("main");
+    </script>
+</head>
+
+<body>
+    <div id="accordion">
+        <h3>Static Paths</h3>
+        <div>
+            <a href="#test/42/dodo?redirect=true&color=ff00ff">Query</a><br />
+            <a href="#settings/">Settings</a><br />
+            <a href="#quit/">Quit</a><br />
+        </div>
+        <h3>Dynamic paths</h3>
+        <div>
+            <a href="#book/1/">Book1</a><br />
+            <a href="#book/2/">Book2</a><br />
+            <a href="#book/3/note/1/">Note1</a><br />
+            <a href="#book/3/note/2/">Note2</a><br />
+        </div>
+        <h3>Query strings</h3>
+        <div>
+            <a href="#test/abv?framework=qunit">Test</a><br />
+            <a href="#book/1/gde?title=HelpMe">Book1</a><br />
+            <a href="#book/3/note/1/testa?body=LOL">Note1</a><br />
+        </div>
+    </div>
+
+    <div id="final">
+        <h2 id="output">Output:</h2>
+        <hr color="#eeeeee" />
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>

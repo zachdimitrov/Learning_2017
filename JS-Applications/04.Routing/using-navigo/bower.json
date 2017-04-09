@@ -1,0 +1,21 @@
+{
+  "name": "routing-test",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Zach"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/zachdimitrov/Learning_2017",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1"
+  }
+}

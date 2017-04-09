@@ -1,0 +1,25 @@
+{
+  "name": "systemjs-test",
+  "description": "test of systemjs",
+  "main": "./app-modules/main.js",
+  "authors": [
+    "Zach Dimitrov"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "systemjs",
+    "js"
+  ],
+  "homepage": "https://github.com/zachdimitrov/Learning_2017",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1"
+  }
+}

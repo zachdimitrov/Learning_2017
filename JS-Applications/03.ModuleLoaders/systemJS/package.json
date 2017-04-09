@@ -1,0 +1,19 @@
+{
+    "name": "systemjs-test",
+    "version": "1.0.0",
+    "description": "test of systemjs",
+    "main": "./app-modules/main.js",
+    "scripts": {
+        "test": "test"
+    },
+    "keywords": [
+        "systemjs",
+        "js"
+    ],
+    "author": "Zach Dimitrov",
+    "license": "ISC",
+    "dependencies": {
+        "systemjs": "^0.20.11",
+        "systemjs-plugin-babel": "0.0.21"
+    }
+}

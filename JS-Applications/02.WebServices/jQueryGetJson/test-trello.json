@@ -1,0 +1,154 @@
+{
+    "id": "5787ad91b40865fad5e9e2f5",
+    "badges": {
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 2,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+    },
+    "checkItemStates": [
+
+    ],
+    "closed": false,
+    "dueComplete": false,
+    "dateLastActivity": "2016-07-16T12:31:43.415Z",
+    "desc": "",
+    "descData": null,
+    "due": null,
+    "email": "zachdimitrov+2mjhnvn26w76p3p1afd+2mjqo8eyw3lud1d2gvp+0ptkq8jpxf@boards.trello.com",
+    "idBoard": "5787a21e8a93b2af08365fb2",
+    "idChecklists": [
+
+    ],
+    "idList": "5787ad02268d9edabbcb32da",
+    "idMembers": [
+
+    ],
+    "idMembersVoted": [
+
+    ],
+    "idShort": 17,
+    "idAttachmentCover": null,
+    "manualCoverAttachment": false,
+    "labels": [
+
+    ],
+    "idLabels": [
+
+    ],
+    "name": "Договор за покупка",
+    "pos": 131071,
+    "shortLink": "NZQ809Vk",
+    "shortUrl": "https://trello.com/c/NZQ809Vk",
+    "subscribed": false,
+    "url": "https://trello.com/c/NZQ809Vk/17--",
+    "actions": [{
+            "id": "578a292f78055444057be666",
+            "idMemberCreator": "5788954eb6cf9d1ccb8dec40",
+            "data": {
+                "list": {
+                    "name": "Покупка / Документи",
+                    "id": "5787ad02268d9edabbcb32da"
+                },
+                "board": {
+                    "shortLink": "0on1EeBC",
+                    "name": "Ремонт и Покупки",
+                    "id": "5787a21e8a93b2af08365fb2"
+                },
+                "card": {
+                    "shortLink": "NZQ809Vk",
+                    "idShort": 17,
+                    "name": "Договор за покупка",
+                    "id": "5787ad91b40865fad5e9e2f5"
+                },
+                "text": "Да се насрочи час за сделката при нотариуса"
+            },
+            "type": "commentCard",
+            "date": "2016-07-16T12:31:43.417Z",
+            "memberCreator": {
+                "id": "5788954eb6cf9d1ccb8dec40",
+                "avatarHash": null,
+                "fullName": "Veni Dimitrova",
+                "initials": "VD",
+                "username": "venidimitrova"
+            }
+        },
+        {
+            "id": "5789f160923348e00c378b40",
+            "idMemberCreator": "578607c798bc4783df56a009",
+            "data": {
+                "list": {
+                    "name": "Покупка / Документи",
+                    "id": "5787ad02268d9edabbcb32da"
+                },
+                "board": {
+                    "shortLink": "0on1EeBC",
+                    "name": "Ремонт и Покупки",
+                    "id": "5787a21e8a93b2af08365fb2"
+                },
+                "card": {
+                    "shortLink": "NZQ809Vk",
+                    "idShort": 17,
+                    "name": "Договор за покупка",
+                    "id": "5787ad91b40865fad5e9e2f5"
+                },
+                "text": "Да се изготви от нотариуса и да се прати на продавачите преди сделката"
+            },
+            "type": "commentCard",
+            "date": "2016-07-16T08:33:36.099Z",
+            "memberCreator": {
+                "id": "578607c798bc4783df56a009",
+                "avatarHash": "b5e2fe58cf7e6bd6ec4d0d9ccf4a37cb",
+                "fullName": "Zach Dimitrov",
+                "initials": "ZD",
+                "username": "zachdimitrov"
+            }
+        },
+        {
+            "id": "5787ad91b40865fad5e9e2f6",
+            "idMemberCreator": "578607c798bc4783df56a009",
+            "data": {
+                "board": {
+                    "shortLink": "0on1EeBC",
+                    "name": "Ремонт и Покупки",
+                    "id": "5787a21e8a93b2af08365fb2"
+                },
+                "list": {
+                    "name": "Покупка / Документи",
+                    "id": "5787ad02268d9edabbcb32da"
+                },
+                "card": {
+                    "shortLink": "NZQ809Vk",
+                    "idShort": 17,
+                    "name": "Договор за покупка",
+                    "id": "5787ad91b40865fad5e9e2f5"
+                }
+            },
+            "type": "createCard",
+            "date": "2016-07-14T15:19:45.051Z",
+            "memberCreator": {
+                "id": "578607c798bc4783df56a009",
+                "avatarHash": "b5e2fe58cf7e6bd6ec4d0d9ccf4a37cb",
+                "fullName": "Zach Dimitrov",
+                "initials": "ZD",
+                "username": "zachdimitrov"
+            }
+        }
+    ],
+    "checklists": [
+
+    ],
+    "members": [
+
+    ],
+    "pluginData": [
+
+    ]
+}

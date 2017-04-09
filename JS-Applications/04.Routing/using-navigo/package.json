@@ -1,0 +1,16 @@
+{
+  "name": "routing-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Zach",
+  "license": "MIT",
+  "dependencies": {
+    "navigo": "^4.5.2",
+    "systemjs": "^0.20.12",
+    "systemjs-plugin-babel": "0.0.21"
+  }
+}
