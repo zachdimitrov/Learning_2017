@@ -1,0 +1,14 @@
+{
+  "name": "simple-forum-with-server",
+  "version": "1.0.0",
+  "description": "- load sammy as dependency\r ```html\r <script src=\"./bower_components/sammy/lib/sammy.js\"></script>\r ```\r - add HTML items\r ```html\r <a href=\"#/\">Home</a> // home link\r <a href=\"#/items\">Items</a> // items link\r <div id=\"content\"></div> // content of page\r ```\r - create and execute sammy\r ```js\r var sammyApp = Sammy(\"#content\", function() { // create and return sammy object\r     this.get(\"#/\", function() { // routing \r         console.log(\"HOME\");\r         this.redirect(\"#/home\"); // redirect to home\r     });",
+  "main": "./public/js/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Zach Dimitrov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
