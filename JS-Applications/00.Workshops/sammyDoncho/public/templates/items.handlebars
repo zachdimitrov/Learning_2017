@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+<ul class="nav nav-default">
+    <h3> Click on a name to see details </h3>
+    <div> Or <strong>Add New</strong> name </div>
+    <a class="btn btn-default btn-lg" href="#/items/add"><strong>Add New</strong></a>
+{{#each items}}
+    <li>
+        <a class="btn btn-primary" href="#/items/{{id}}">{{name}}</a>
+    </li>
+{{/each}}
+</ul>
+</nav>
