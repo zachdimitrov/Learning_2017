@@ -1,0 +1,20 @@
+{
+  "name": "sammy-evlogi-demo",
+  "description": "sammy.js test demo",
+  "main": "./public/js/app.js",
+  "authors": [
+    "Zach Dimitrov"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "sammy"
+  ],
+  "homepage": "https://github.com/zachdimitrov/Learning_2017",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

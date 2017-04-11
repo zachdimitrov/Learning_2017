@@ -1,0 +1,17 @@
+{
+  "name": "sammy-evlogi-demo",
+  "version": "1.0.0",
+  "description": "sammy.js test demo",
+  "main": "./public/js/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "sammy"
+  ],
+  "author": "Zach Dimitrov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
