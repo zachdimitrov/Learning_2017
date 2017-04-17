@@ -21,5 +21,5 @@ var templates = function() {
 
     return {
         get
-    }
+    };
 }();

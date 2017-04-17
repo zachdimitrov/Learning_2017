@@ -13,7 +13,7 @@ var db = function() {
                 error: function(err) {
                     reject(err);
                 }
-            })
+            });
         });
 
         return promise;
@@ -45,7 +45,7 @@ var db = function() {
     var lastId = 0;
 
     function save(item) {
-        var promise = new Promise((resolve, reject) => {
+        var promise = new Promise(function(resolve, reject) {
             item.id = lastId += 1;
             items.push(item);
             resolve("Success!");

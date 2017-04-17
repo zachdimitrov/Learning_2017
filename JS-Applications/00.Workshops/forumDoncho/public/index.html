@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: Simple Forum with Sammy.js, jQuery and Handlebars</title>
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="root">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-9">Simple forum</h1>
+                    <div id="login-controls" class="col-sm-3">
+                        <a id="btn-goto-login" href="#/login" class="btn btn-default">Login or Register</a>
+                        <button id="btn-logout" href="#/login" class="btn btn-default">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/threads">Threads</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content"></div>
+    </div>
+
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/sammy/lib/sammy.js"></script>
+    <script src="./bower_components/handlebars/handlebars.js"></script>
+    <script src="./bower_components/crypto-js/crypto-js.js"></script>
+    <script src="./js/template.js"></script>
+    <script src="./js/data.js"></script>
+
+    <script>
+        "use strict";
+
+        var sammyApp = Sammy("#content", function() {
+            var $content = $("#content");
+            this.get("#/", function() {
+                console.log("------- home -------");
+                this.redirect("#/threads");
+            });
+
+            this.get("#/threads", function(context) {
+                var threads;
+                data.threads.get()
+                    .then(function(responseThreads) {
+                        threads = responseThreads;
+                        return templates.get("threads");
+                    })
+                    .then(function(template) {
+                        $content.html(template(threads));
+                    });
+            });
+
+            this.get("#/threads/add", function(context) {
+                templates.get("thread-add")
+                    .then(function(template) {
+                        $content.html(template());
+                        $("#btn-add-thread").on("click", function() {
+                            var title = $("#tb-thread-title").val();
+                            data.threads.add(title)
+                                .then(function() {
+                                    context.redirect("#/threads");
+                                });
+                        });
+                    });
+            });
+
+            this.get("#/threads/:id", function() {
+                var thread;
+                data.threads.byId(this.params.id)
+                    .then(function(res) {
+                        thread = res.result;
+                        return templates.get("thread-details")
+                    })
+                    .then(function(template) {
+                        $content.html(template(thread));
+                    });
+            });
+
+            this.get("#/threads/:threadId/messages/add", function(context) {
+                var threadId = this.params.threadId;
+                templates.get("message-add")
+                    .then(function(template) {
+                        $content.html(template());
+                        $("#btn-add-message").on("click", function() {
+                            var text = $("#tb-text").val();
+                            console.log(threadId, text);
+                            data.threads.addMessage(threadId, {
+                                    text
+                                })
+                                .then(function() {
+                                    context.redirect("#/threads/" + threadId)
+                                });
+                        });
+                    });
+
+            });
+
+            this.get("#/login", function(context) {
+
+                if (data.users.current()) {
+                    context.redirect("#/");
+                    return;
+                }
+
+                templates.get("login")
+                    .then(function(template) {
+                        console.log('------- login -------');
+                        $content.html(template());
+                        console.log('------- login template loaded -------');
+                        $("#btn-login").on("click", function() {
+                            var user = {
+                                username: $("#tb-user").val(),
+                                password: $("#tb-pass").val()
+                            };
+                            data.users.login(user)
+                                .then(function(user) {
+                                    context.redirect("#/");
+                                    document.location.reload(true);
+                                });
+                        });
+
+                        $("#btn-register").on("click", function() {
+                            var user = {
+                                username: $("#tb-user").val(),
+                                password: $("#tb-pass").val()
+                            };
+                            data.users.register(user)
+                                .then(function(user) {
+                                    document.location.reload(true);
+                                    context.redirect("#/");
+                                });
+                        });
+                    });
+            })
+        });
+
+        $(function() {
+            sammyApp.run("#/");
+            if (data.users.current()) {
+                $("#btn-goto-login")
+                    .addClass("hidden");
+            } else {
+                $("#btn-logout")
+                    .addClass("hidden");
+            }
+            $("#btn-logout").on("click", function() {
+                data.users.logout()
+                    .then(function() {
+                        location = "#/";
+                        document.location.reload(true);
+                    });
+            });
+        })
+    </script>
+</body>
+
+</html>

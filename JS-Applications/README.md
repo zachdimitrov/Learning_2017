@@ -11,6 +11,7 @@ name | install name | npm | bower | description |
 [sammy JS](http://sammyjs.org/) | `sammy` | yes | no | lib for Routing, requires jQuery
 [navigo](https://github.com/krasimir/navigo) | `navigo` | yes | no | lib for Routing
 [express](http://expressjs.com/) | `express` | yes | no | Web framework
+[crypto-js](https://github.com/brix/crypto-js) | yes | yes | for creating encrypted passwords
 [mocha](http://mochajs.org/) | `mocha` | yes | no | JS unit testing framework
 [chai](http://chaijs.com/) | `chai` | yes | yes | JS unit testing framework
 [grunt](https://gruntjs.com/) | `grunt` | yes | no | JS task runner
