@@ -69,6 +69,10 @@ catch (ArgumentException e)
 {
     Console.WriteLine("Invalid Argument");
 }
+finally
+{
+    Console.WriteLine("Hello from Finally!"); // used for closing IDisposable for example
+}
 ```
 
 ### Release and Debug modes in Visual Studio
