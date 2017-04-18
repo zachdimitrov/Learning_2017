@@ -52,6 +52,11 @@ public class AssertionDemo
 
 ### Exceptions
 
+- use only in exceptional situations
+- can be very slow (do not use for simple errors as user names)
+- crate custom exception Class when needed
+- messages need to be very descriptive
+
 #### Defense Clauses
 ```c#
 if (input == null) 
@@ -74,6 +79,25 @@ finally
     Console.WriteLine("Hello from Finally!"); // used for closing IDisposable for example
 }
 ```
+
+#### [Bytes2you.Validation](https://github.com/veskokolev/Bytes2you.Validation) library
+- include from NuGet and use like this
+
+```c#
+Guard.WhenArgument(number, "Action number")
+    .IsGreaterThan(15)
+    .IsLessThan(10)
+    .Throw();
+```
+
+#### Robustness vs. Correctness
+- **Robustness** - always try to return something (video decoding or game)
+- **Correctness** - never return wrong result (bank or medical software)
+
+#### Error Barricades
+- public methods / functions
+- private methods / functions
+
 
 ### Release and Debug modes in Visual Studio
 
