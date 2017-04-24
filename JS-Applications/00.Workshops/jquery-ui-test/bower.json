@@ -1,0 +1,24 @@
+{
+  "name": "jquery-test",
+  "authors": [
+    "zachdimitrov <zahari_d@abv.bg>"
+  ],
+  "description": "jquery test",
+  "main": "app.js",
+  "keywords": [
+    "jquery-ui"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1"
+  }
+}

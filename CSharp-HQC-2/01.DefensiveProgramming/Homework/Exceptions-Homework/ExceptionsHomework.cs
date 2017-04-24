@@ -7,6 +7,12 @@ class ExceptionsHomework
     public static T[] Subsequence<T>(T[] arr, int startIndex, int count)
     {
         List<T> result = new List<T>();
+
+        if (startIndex + count > arr.Length)
+        {
+            throw new ArgumentOutOfRangeException("Count exceeds array length!");
+        }
+
         for (int i = startIndex; i < startIndex + count; i++)
         {
             result.Add(arr[i]);
@@ -18,7 +24,7 @@ class ExceptionsHomework
     {
         if (count > str.Length)
         {
-            return "Invalid count!";
+            throw new ArgumentOutOfRangeException("Count is not valid!");
         }
 
         StringBuilder result = new StringBuilder();
@@ -29,15 +35,17 @@ class ExceptionsHomework
         return result.ToString();
     }
 
-    public static void CheckPrime(int number)
+    public static bool CheckPrime(int number)
     {
         for (int divisor = 2; divisor <= Math.Sqrt(number); divisor++)
         {
             if (number % divisor == 0)
             {
-                throw new Exception("The number is not prime!");
+                return false;
             }
         }
+
+        return true;
     }
 
     static void Main()
@@ -57,27 +65,11 @@ class ExceptionsHomework
         Console.WriteLine(ExtractEnding("I love C#", 2));
         Console.WriteLine(ExtractEnding("Nakov", 4));
         Console.WriteLine(ExtractEnding("beer", 4));
-        Console.WriteLine(ExtractEnding("Hi", 100));
+        // Console.WriteLine(ExtractEnding("Hi", 100));
 
-        try
-        {
-            CheckPrime(23);
-            Console.WriteLine("23 is prime.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("23 is not prime");
-        }
 
-        try
-        {
-            CheckPrime(33);
-            Console.WriteLine("33 is prime.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("33 is not prime");
-        }
+        Console.WriteLine("23 is {0} prime.", CheckPrime(23)?"":"not");
+        Console.WriteLine("23 is {0} prime.", CheckPrime(33)?"":"not");
 
         List<Exam> peterExams = new List<Exam>()
         {
