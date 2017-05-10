@@ -1,0 +1,10 @@
+﻿Bugs:
+
+#1 FileLogger class - Error was commented
+#2 Projects class - Users and Tasks were set to virtual
+#3 CommandFactory - There was not a case for CreateUser
+#4 User - EmailValidation does not work
+
+Bottleneck:
+
+#1 Bottle neck is located in Engine.Start method
