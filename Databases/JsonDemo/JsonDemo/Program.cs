@@ -33,6 +33,15 @@ namespace JsonDemo
             this.Description = Description;
             this.Genres = Genres;
         }
+        public override string ToString()
+        {
+            var builder = new StringBuilder();
+            builder.AppendLine($"{this.Id}");
+            builder.AppendLine($"{this.Title}");
+            builder.AppendLine($"{this.Description}");
+            builder.AppendLine($"{string.Join(", ",this.Genres)}");
+            return builder.ToString();
+        }
     }
 
     public class Program
