@@ -186,6 +186,7 @@ var i = (from c in customers
 var j = customers.Where(
         c => c.CustomerID == 85).
         Select(o => o.CustomerID).SingleOrDefault();
+```
 
 ####Conversions
 
