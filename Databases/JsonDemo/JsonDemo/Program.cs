@@ -33,6 +33,7 @@ namespace JsonDemo
             this.Description = Description;
             this.Genres = Genres;
         }
+
         public override string ToString()
         {
             var builder = new StringBuilder();
