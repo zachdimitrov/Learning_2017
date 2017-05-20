@@ -142,7 +142,7 @@ var cust = (from c in customers
 var cust1 = customers.Single(
             c => c.CustomerID == 84);
 ```
-#### returns null if no elements
+- returns null if no elements
 ```c#
 var cust = (from c in customers
             where c.CustomerID == 84
@@ -152,7 +152,7 @@ var cust = (from c in customers
 var cust1 = customers.SingleOrDefault(
             c => c.CustomerID == 84);\
 ```
-#### returns a new customer instance if no elements
+- returns a new customer instance if no elements
 ```c#
 var cust = (from c in customers
             where c.CustomerID == 85
@@ -163,7 +163,7 @@ var cust1 = customers.Where(
             c => c.CustomerID == 85
             ).DefaultIfEmpty(new Customer()).Single();
 ```
-#### First, Last and ElementAt used in same way
+- First, Last and ElementAt used in same way
 ```c#
 var cust4 = (from o in orders
              where o.CustomerID == 84
@@ -175,7 +175,7 @@ var cust5 = orders.Where(
             o => o.CustomerID == 84).
             OrderBy(o => o.Cost).Last();
 ```
-#### returns 0 if no elements.
+- returns 0 if no elements.
 ```c#
 var i = (from c in customers
          where c.CustomerID == 85
