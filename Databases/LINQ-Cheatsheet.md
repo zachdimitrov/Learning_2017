@@ -158,6 +158,7 @@ var cust = (from c in customers
             where c.CustomerID == 85
             select c).DefaultIfEmpty(
               new Customer()).Single();
+```
 ```c#
 var cust1 = customers.Where(
             c => c.CustomerID == 85
