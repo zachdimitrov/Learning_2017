@@ -130,9 +130,59 @@ var col3 = (from o in orders
            orderby o.Cost
            select o).Skip(2).Take(2);
 ```
-```C#
-var col3 = (from o in orders
-            where o.CustomerID == 84
-            orderby o.Cost
-            select o).Skip(2).Take(2);
+
+#### Element Operators (Single, Last, First, ElementAt, Defaults)
+- throws exception if no elements
+```c#
+var cust = (from c in customers
+           where c.CustomerID == 84
+           select c).Single();
 ```
+```c#
+var cust1 = customers.Single(
+            c => c.CustomerID == 84);
+```
+#### returns null if no elements
+```c#
+var cust = (from c in customers
+            where c.CustomerID == 84
+            select c).SingleOrDefault();
+```	
+```c#
+var cust1 = customers.SingleOrDefault(
+            c => c.CustomerID == 84);\
+```
+#### returns a new customer instance if no elements
+```c#
+var cust = (from c in customers
+            where c.CustomerID == 85
+            select c).DefaultIfEmpty(
+              new Customer()).Single();
+```c#
+var cust1 = customers.Where(
+            c => c.CustomerID == 85
+            ).DefaultIfEmpty(new Customer()).Single();
+```
+#### First, Last and ElementAt used in same way
+```c#
+var cust4 = (from o in orders
+             where o.CustomerID == 84
+             orderby o.Cost
+             select o).Last();
+```	
+```c#
+var cust5 = orders.Where(
+            o => o.CustomerID == 84).
+            OrderBy(o => o.Cost).Last();
+```
+#### returns 0 if no elements.
+```c#
+var i = (from c in customers
+         where c.CustomerID == 85
+         select c.CustomerID).SingleOrDefault();
+```
+```c#
+var j = customers.Where(
+        c => c.CustomerID == 85).
+        Select(o => o.CustomerID).SingleOrDefault();
+
