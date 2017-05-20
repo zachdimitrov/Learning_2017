@@ -187,3 +187,32 @@ var j = customers.Where(
         c => c.CustomerID == 85).
         Select(o => o.CustomerID).SingleOrDefault();
 
+####Conversions
+
+- ToArray
+```c#
+string[] names = (from c in customers
+                  select c.Name).ToArray();
+```
+- ToDictionary
+```c#
+Dictionary<int, Customer> col = customers.ToDictionary(c => c.CustomerID);
+Dictionary<string, double> customerOrdersWithMaxCost = (from oc in
+
+(from o in orders join c in customers on o.CustomerID equals c.CustomerID
+ 	select new { c.Name, o.Cost })
+
+group oc by oc.Name into g
+      select g).ToDictionary(g => g.Key, g => g.Max(oc => oc.Cost));
+```
+- ToList
+```c#
+List<Order> ordersOver10 = (from o in orders
+where o.Cost > 10
+      orderby o.Cost).ToList();
+```
+- ToLookup
+```c#
+ILookup<int, string> customerLookup = 
+           customers.ToLookup(c => c.CustomerID, c => c.Name);
+```
