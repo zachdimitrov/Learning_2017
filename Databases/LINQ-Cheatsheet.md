@@ -8,26 +8,31 @@
 </tr>
 <tr>
     <td>
-Filterng
+<strong>Filterng</strong>
     </td>
     <td>
+<div  class="highlight highlight-source-cs">
 <pre>
 var col = from o in Orders
           where o.CustomerID == 84
           select o;
 </pre>
+</div>
     </td>
-    <td>  
+    <td>
+<div  class="highlight highlight-source-cs">  
 <pre>
 var col2 = Orders.Where(o => o.CustomerID == 84);
 </pre>
+</div>
     </td>
 </tr>
 <tr>
     <td>
-Return anonymos
+<strong>Return anonymos</strong>
     </td>
     <td>
+<div  class="highlight highlight-source-cs">
 <pre>
 var col = from o in orders
           select new 
@@ -36,8 +41,10 @@ var col = from o in orders
               Cost = o.Cost 
           };
 </pre>
+</div>
     </td>
     <td>  
+<div  class="highlight highlight-source-cs">
 <pre>
 var col2 = orders.Select(o => new 
       {
@@ -46,5 +53,7 @@ var col2 = orders.Select(o => new
       }
     );
 </pre>
+</div>
     </td>
 </tr>
+
