@@ -109,30 +109,36 @@ create intermediate table with 2 primary keys
 
 #### search
 ```sql
-SELECT FirstName, LastName, JobTitle FROM Employees /* simple select */
-
-SELECT FirstName, 0.1*Salary AS [Bonus] FROM Employees /* name new column */
-
-SELECT FirstName + ' ' + LastName AS [Full Name], Id AS [No.] FROM Employees /* join column names */
-
-SELECT FirstName AS [Name] FROM Employees UNION SELECT LastName AS [Name] FROM Employees /* all in one column */
+/* simple select */
+SELECT FirstName, LastName, JobTitle FROM Employees
+/* name new column */
+SELECT FirstName, 0.1*Salary AS [Bonus] FROM Employees
+/* join column names */
+SELECT FirstName + ' ' + LastName AS [Full Name], Id AS [No.] FROM Employees
+/* all in one column */
+SELECT FirstName AS [Name] FROM Employees UNION SELECT LastName AS [Name] FROM Employees
 INTERSECT, EXCEPT /* other ways to union */
-
-SELECT * FROM Projects WHERE StartDate = '1/1/2006' /* add condition, always with update and delete */
-
-SELECT LastName, Salary FROM Employees WHERE Salary BETWEEN 1000 AND 2000 /* between, we have NOT, AND, OR */
-
-SELECT FirstName, LastName FROM Employees WHERE ManagerID IN (10, 22, 23) /* filter by ManagerId */
-
-SELECT FirstName FROM Employees WHERE FirstName LIKE 'S%' /* specify pattern %-0 or more chars, _ means one char */
-
-SELECT FirstName FROM Employees WHERE ManagerId IS NOT NULL /* way to check null */ 
-
-SELECT LastName FROM Employees WHERE NOT (ManagerId = 3 OR ManagerId = 4) AND (Salary >= 1000) /* more complex where filter */
-
-SELECT DISTINCT column1, column2 FROM table_name /* distinct values */
-
-SELECT TOP(10) /* selecs only 10  */
+/* add condition, always with update and delete */
+SELECT * FROM Projects WHERE StartDate = '1/1/2006' 
+/* between, we have NOT, AND, OR */
+SELECT LastName, Salary FROM Employees WHERE Salary BETWEEN 1000 AND 2000 
+/* filter by ManagerId */
+SELECT FirstName, LastName FROM Employees WHERE ManagerID IN (10, 22, 23) 
+/* specify pattern %-0 or more chars, _ means one char */
+SELECT FirstName FROM Employees WHERE FirstName LIKE 'S%' 
+/* way to check null */
+SELECT FirstName FROM Employees WHERE ManagerId IS NOT NULL  
+/* more complex where filter */
+SELECT LastName FROM Employees WHERE NOT (ManagerId = 3 OR ManagerId = 4) AND (Salary >= 1000) 
+/* distinct values */
+SELECT DISTINCT column1, column2 FROM table_name 
+/* selecs only 10  */
+SELECT TOP(10) 
+/* nested select, can include WHERE too */
+SELECT FirstName, LastName, Salary FROM Employees WHERE Salary = (SELECT MAX(Salary) FROM Employees) 
+/* compare first select with nested one */
+SELECT FirstName, Salary FROM Employees e WHERE Salary = (SELECT MAX(Salary) FROM Employees WHERE DepartmentID = e.DepartmentID) ORDER BY DepartmentID
+/* */
 ```
 
 #### join

@@ -6,6 +6,14 @@
 ## Design Patterns Introduction
 
 ## Principles in OOP Design
+#### Single Responsibility 
+every object should have single responsibility and there should be only one reason to change
+#### Open Closed
+A Class should be open for extension and closed for modification
+Three approaches:
+- Parameters - pass delegates / callbacks
+- Inheritance / Template Method pattern - Chold override base class behavior
+- Composition / Strategy pattern - abstraction
 
 ## Creational Pattersn
 

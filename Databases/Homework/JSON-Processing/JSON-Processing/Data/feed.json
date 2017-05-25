@@ -1,0 +1,1287 @@
+[{
+        "id": "yt:video:e5s5w620KhU",
+        "yt:videoId": "e5s5w620KhU",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Dependency Injection подходи",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=e5s5w620KhU"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-23T16:05:05+00:00",
+        "updated": "2017-05-24T08:36:02+00:00",
+        "media:group": {
+            "media:title": "Dependency Injection подходи",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/e5s5w620KhU?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i2.ytimg.com/vi/e5s5w620KhU/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Dependency Injection подходи\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 23 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "4",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "138"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:OxENk8nYrLE",
+        "yt:videoId": "OxENk8nYrLE",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Увод в Dependency Inversion, Dependency Injection и IoC контейнери",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=OxENk8nYrLE"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-23T15:47:02+00:00",
+        "updated": "2017-05-24T06:34:57+00:00",
+        "media:group": {
+            "media:title": "Увод в Dependency Inversion, Dependency Injection и IoC контейнери",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/OxENk8nYrLE?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i4.ytimg.com/vi/OxENk8nYrLE/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Увод в Dependency Inversion, Dependency Injection и IoC контейнери\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 23 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "2",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "124"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:ofT8DIPhfNg",
+        "yt:videoId": "ofT8DIPhfNg",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: SQL - Part 1",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=ofT8DIPhfNg"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-22T15:30:30+00:00",
+        "updated": "2017-05-24T12:46:06+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: SQL - Part 1",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/ofT8DIPhfNg?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i4.ytimg.com/vi/ofT8DIPhfNg/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: SQL - Part 1\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 22 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "4",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "135"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:dLa-o7XOH4I",
+        "yt:videoId": "dLa-o7XOH4I",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: SQL - Part 2",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=dLa-o7XOH4I"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-22T15:02:24+00:00",
+        "updated": "2017-05-24T19:34:59+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: SQL - Part 2",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/dLa-o7XOH4I?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i1.ytimg.com/vi/dLa-o7XOH4I/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: SQL - Part 2\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 22 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "4",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "83"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:4s0f6kqQl-0",
+        "yt:videoId": "4s0f6kqQl-0",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Database Modeling",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=4s0f6kqQl-0"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:41:58+00:00",
+        "updated": "2017-05-22T20:25:06+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: Database Modeling",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/4s0f6kqQl-0?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i1.ytimg.com/vi/4s0f6kqQl-0/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Database Modeling\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "1",
+                    "@average": "1.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "218"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:VJCANxBPXtk",
+        "yt:videoId": "VJCANxBPXtk",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: MS SQL Server",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=VJCANxBPXtk"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:11:28+00:00",
+        "updated": "2017-05-23T20:26:58+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: MS SQL Server",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/VJCANxBPXtk?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i3.ytimg.com/vi/VJCANxBPXtk/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: MS SQL Server\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "189"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:kZs9dMlkd5s",
+        "yt:videoId": "kZs9dMlkd5s",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: PostgreSQL Overview",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=kZs9dMlkd5s"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:06:33+00:00",
+        "updated": "2017-05-24T19:27:04+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: PostgreSQL Overview",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/kZs9dMlkd5s?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i4.ytimg.com/vi/kZs9dMlkd5s/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: PostgreSQL Overview\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "247"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:OK39mwl2k_U",
+        "yt:videoId": "OK39mwl2k_U",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SOLID и други принципи",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=OK39mwl2k_U"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T08:34:31+00:00",
+        "updated": "2017-05-21T15:38:14+00:00",
+        "media:group": {
+            "media:title": "SOLID и други принципи",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/OK39mwl2k_U?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i4.ytimg.com/vi/OK39mwl2k_U/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: SOLID и други принципи\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 16 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "282"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:PwBDRjMtJII",
+        "yt:videoId": "PwBDRjMtJII",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Въведение в курса",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=PwBDRjMtJII"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T07:54:11+00:00",
+        "updated": "2017-05-21T17:24:55+00:00",
+        "media:group": {
+            "media:title": "Въведение в курса",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/PwBDRjMtJII?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i1.ytimg.com/vi/PwBDRjMtJII/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Въведение в курса\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 16 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "260"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:aTB4Ea5CEUE",
+        "yt:videoId": "aTB4Ea5CEUE",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Примерен IT тест - ден 2",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=aTB4Ea5CEUE"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T15:01:19+00:00",
+        "updated": "2017-05-17T04:46:44+00:00",
+        "media:group": {
+            "media:title": "Примерен IT тест - ден 2",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/aTB4Ea5CEUE?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i2.ytimg.com/vi/aTB4Ea5CEUE/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Примерен IT тест - ден 2\nКурс: Подготовка за НОИТ\nЛектор: Кристиян Цъклев\nДата: 5 май 2017\n\nУебсайт на Телерик Академия: https://telerikacademy.com\n\nСледете за предстоящи обучения на Телерик Академия във Facebook: https://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "1",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "120"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:PLb33WoQZKo",
+        "yt:videoId": "PLb33WoQZKo",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Примерен IT тест - ден 1",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=PLb33WoQZKo"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T14:53:51+00:00",
+        "updated": "2017-05-18T20:41:39+00:00",
+        "media:group": {
+            "media:title": "Примерен IT тест - ден 1",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/PLb33WoQZKo?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i1.ytimg.com/vi/PLb33WoQZKo/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Примерен IT тест - ден 1\nКурс: Подготовка за НОИТ\nЛектор: Кристиян Цъклев\nДата: 4 май 2017\n\nУебсайт на Телерик Академия: https://telerikacademy.com\n\nСледете за предстоящи обучения на Телерик Академия във Facebook: https://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "2",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "184"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:Yc75t8XVUBQ",
+        "yt:videoId": "Yc75t8XVUBQ",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: XML в .NET",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=Yc75t8XVUBQ"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T08:58:41+00:00",
+        "updated": "2017-05-19T07:09:02+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: XML в .NET",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/Yc75t8XVUBQ?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i2.ytimg.com/vi/Yc75t8XVUBQ/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: XML в .NET\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "270"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:Rs1kWatY1t8",
+        "yt:videoId": "Rs1kWatY1t8",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: JSON в .NET",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=Rs1kWatY1t8"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:38:41+00:00",
+        "updated": "2017-05-16T04:43:37+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: JSON в .NET",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/Rs1kWatY1t8?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i3.ytimg.com/vi/Rs1kWatY1t8/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: JSON в .NET\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "1",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "336"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:2dstYdXupV4",
+        "yt:videoId": "2dstYdXupV4",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Основи на XML",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=2dstYdXupV4"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:37:40+00:00",
+        "updated": "2017-05-17T06:00:37+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: Основи на XML",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/2dstYdXupV4?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i3.ytimg.com/vi/2dstYdXupV4/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Основи на XML\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "5",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "303"
+                }
+            }
+        }
+    },
+    {
+        "id": "yt:video:tIRcT8af8C4",
+        "yt:videoId": "tIRcT8af8C4",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Въведение в курса",
+        "link": {
+            "@rel": "alternate",
+            "@href": "https://www.youtube.com/watch?v=tIRcT8af8C4"
+        },
+        "author": {
+            "name": "Telerik Academy",
+            "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:13:13+00:00",
+        "updated": "2017-05-16T09:36:20+00:00",
+        "media:group": {
+            "media:title": "Бази от данни: Въведение в курса",
+            "media:content": {
+                "@url": "https://www.youtube.com/v/tIRcT8af8C4?version=3",
+                "@type": "application/x-shockwave-flash",
+                "@width": "640",
+                "@height": "390"
+            },
+            "media:thumbnail": {
+                "@url": "https://i1.ytimg.com/vi/tIRcT8af8C4/hqdefault.jpg",
+                "@width": "480",
+                "@height": "360"
+            },
+            "media:description": "Лекция: Въведение в курса\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+            "media:community": {
+                "media:starRating": {
+                    "@count": "3",
+                    "@average": "5.00",
+                    "@min": "1",
+                    "@max": "5"
+                },
+                "media:statistics": {
+                    "@views": "428"
+                }
+            }
+        }
+    }
+]{
+  "feed": {
+    "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+    "@xmlns:media": "http://search.yahoo.com/mrss/",
+    "@xmlns": "http://www.w3.org/2005/Atom",
+    "link": [
+      {
+        "@rel": "self",
+        "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCLC-vbm7OWvpbqzXaoAMGGw"
+      },
+      {
+        "@rel": "alternate",
+        "@href": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+      }
+    ],
+    "id": "yt:channel:UCLC-vbm7OWvpbqzXaoAMGGw",
+    "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+    "title": "Telerik Academy",
+    "author": {
+      "name": "Telerik Academy",
+      "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+    },
+    "published": "2011-06-24T15:53:13+00:00",
+    "entry": [
+      {
+        "id": "yt:video:e5s5w620KhU",
+        "yt:videoId": "e5s5w620KhU",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Dependency Injection подходи",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=e5s5w620KhU"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-23T16:05:05+00:00",
+        "updated": "2017-05-24T08:36:02+00:00",
+        "media:group": {
+          "media:title": "Dependency Injection подходи",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/e5s5w620KhU?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/e5s5w620KhU/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Dependency Injection подходи\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 23 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "4",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "138"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:OxENk8nYrLE",
+        "yt:videoId": "OxENk8nYrLE",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Увод в Dependency Inversion, Dependency Injection и IoC контейнери",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=OxENk8nYrLE"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-23T15:47:02+00:00",
+        "updated": "2017-05-24T06:34:57+00:00",
+        "media:group": {
+          "media:title": "Увод в Dependency Inversion, Dependency Injection и IoC контейнери",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/OxENk8nYrLE?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/OxENk8nYrLE/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Увод в Dependency Inversion, Dependency Injection и IoC контейнери\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 23 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "2",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "124"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:ofT8DIPhfNg",
+        "yt:videoId": "ofT8DIPhfNg",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: SQL - Part 1",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=ofT8DIPhfNg"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-22T15:30:30+00:00",
+        "updated": "2017-05-24T12:46:06+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: SQL - Part 1",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/ofT8DIPhfNg?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/ofT8DIPhfNg/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SQL - Part 1\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 22 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "4",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "135"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:dLa-o7XOH4I",
+        "yt:videoId": "dLa-o7XOH4I",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: SQL - Part 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=dLa-o7XOH4I"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-22T15:02:24+00:00",
+        "updated": "2017-05-24T19:34:59+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: SQL - Part 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/dLa-o7XOH4I?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/dLa-o7XOH4I/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SQL - Part 2\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 22 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "4",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "83"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:4s0f6kqQl-0",
+        "yt:videoId": "4s0f6kqQl-0",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Database Modeling",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=4s0f6kqQl-0"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:41:58+00:00",
+        "updated": "2017-05-22T20:25:06+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: Database Modeling",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/4s0f6kqQl-0?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/4s0f6kqQl-0/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Database Modeling\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "1",
+              "@average": "1.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "218"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:VJCANxBPXtk",
+        "yt:videoId": "VJCANxBPXtk",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: MS SQL Server",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=VJCANxBPXtk"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:11:28+00:00",
+        "updated": "2017-05-23T20:26:58+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: MS SQL Server",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/VJCANxBPXtk?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i3.ytimg.com/vi/VJCANxBPXtk/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: MS SQL Server\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "189"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:kZs9dMlkd5s",
+        "yt:videoId": "kZs9dMlkd5s",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: PostgreSQL Overview",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=kZs9dMlkd5s"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T16:06:33+00:00",
+        "updated": "2017-05-24T19:27:04+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: PostgreSQL Overview",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/kZs9dMlkd5s?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/kZs9dMlkd5s/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: PostgreSQL Overview\nКурс: Бази от данни (май 2017)\nЛектор: Мартин Вешев\nДата: 19 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "247"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:OK39mwl2k_U",
+        "yt:videoId": "OK39mwl2k_U",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SOLID и други принципи",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=OK39mwl2k_U"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T08:34:31+00:00",
+        "updated": "2017-05-21T15:38:14+00:00",
+        "media:group": {
+          "media:title": "SOLID и други принципи",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/OK39mwl2k_U?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/OK39mwl2k_U/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SOLID и други принципи\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 16 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "282"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:PwBDRjMtJII",
+        "yt:videoId": "PwBDRjMtJII",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Въведение в курса",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=PwBDRjMtJII"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-19T07:54:11+00:00",
+        "updated": "2017-05-21T17:24:55+00:00",
+        "media:group": {
+          "media:title": "Въведение в курса",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/PwBDRjMtJII?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/PwBDRjMtJII/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Въведение в курса\nКурс: Шаблони за дизайн\nЛектор: Виктор Цветков\nДата: 16 май 2017\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "260"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:aTB4Ea5CEUE",
+        "yt:videoId": "aTB4Ea5CEUE",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Примерен IT тест - ден 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=aTB4Ea5CEUE"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T15:01:19+00:00",
+        "updated": "2017-05-17T04:46:44+00:00",
+        "media:group": {
+          "media:title": "Примерен IT тест - ден 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/aTB4Ea5CEUE?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/aTB4Ea5CEUE/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Примерен IT тест - ден 2\nКурс: Подготовка за НОИТ\nЛектор: Кристиян Цъклев\nДата: 5 май 2017\n\nУебсайт на Телерик Академия: https://telerikacademy.com\n\nСледете за предстоящи обучения на Телерик Академия във Facebook: https://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "1",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "120"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:PLb33WoQZKo",
+        "yt:videoId": "PLb33WoQZKo",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Примерен IT тест - ден 1",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=PLb33WoQZKo"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T14:53:51+00:00",
+        "updated": "2017-05-18T20:41:39+00:00",
+        "media:group": {
+          "media:title": "Примерен IT тест - ден 1",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/PLb33WoQZKo?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/PLb33WoQZKo/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Примерен IT тест - ден 1\nКурс: Подготовка за НОИТ\nЛектор: Кристиян Цъклев\nДата: 4 май 2017\n\nУебсайт на Телерик Академия: https://telerikacademy.com\n\nСледете за предстоящи обучения на Телерик Академия във Facebook: https://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "2",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "184"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:Yc75t8XVUBQ",
+        "yt:videoId": "Yc75t8XVUBQ",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: XML в .NET",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=Yc75t8XVUBQ"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-16T08:58:41+00:00",
+        "updated": "2017-05-19T07:09:02+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: XML в .NET",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/Yc75t8XVUBQ?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/Yc75t8XVUBQ/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: XML в .NET\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "272"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:Rs1kWatY1t8",
+        "yt:videoId": "Rs1kWatY1t8",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: JSON в .NET",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=Rs1kWatY1t8"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:38:41+00:00",
+        "updated": "2017-05-16T04:43:37+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: JSON в .NET",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/Rs1kWatY1t8?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i3.ytimg.com/vi/Rs1kWatY1t8/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: JSON в .NET\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "1",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "338"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:2dstYdXupV4",
+        "yt:videoId": "2dstYdXupV4",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Основи на XML",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=2dstYdXupV4"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:37:40+00:00",
+        "updated": "2017-05-17T06:00:37+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: Основи на XML",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/2dstYdXupV4?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i3.ytimg.com/vi/2dstYdXupV4/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Основи на XML\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "5",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "303"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:tIRcT8af8C4",
+        "yt:videoId": "tIRcT8af8C4",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Бази от данни: Въведение в курса",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=tIRcT8af8C4"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2017-05-15T16:13:13+00:00",
+        "updated": "2017-05-16T09:36:20+00:00",
+        "media:group": {
+          "media:title": "Бази от данни: Въведение в курса",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/tIRcT8af8C4?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/tIRcT8af8C4/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Въведение в курса\nКурс: Бази от данни май 2017\nЛектор: Дончо Минков\nДата: 15 май 2017 г.\n\nУебсайт на „Академията на Телерик”: http://telerikacademy.com\n\nСледете за предстоящи обучения на „Академията на Телерик” във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "428"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

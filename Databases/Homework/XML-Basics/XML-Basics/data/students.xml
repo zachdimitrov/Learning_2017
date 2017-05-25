@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<class>
+  <student faculty-number="4433">
+    <name>Zahari</name>
+    <gender>Male</gender>
+    <age>35</age>
+    <phone>0884555366</phone>
+    <email>zahari@abv.bg</email>
+    <course>Math</course>
+    <speciality>Architecture</speciality>
+    <exams>
+      <exam>
+        <course>Physics</course>
+        <tutor>Mitko</tutor>
+        <score>4.3</score>
+      </exam>
+      <exam>
+        <course>English</course>
+        <tutor>Pesho</tutor>
+        <score>4.5</score>
+      </exam>
+      <exam>
+        <course>Math</course>
+        <tutor>Gosho</tutor>
+        <score>5.5</score>
+      </exam>
+    </exams>
+  </student>
+  <student faculty-number="4433">
+    <name>Tsonko</name>
+    <gender>Male</gender>
+    <age>32</age>
+    <phone>0874553345</phone>
+    <email>tsonko@abv.bg</email>
+    <course>Math</course>
+    <speciality>Architecture</speciality>
+    <exams>
+      <exam>
+        <course>Literature</course>
+        <tutor>Lelka</tutor>
+        <score>5.3</score>
+      </exam>
+      <exam>
+        <course>Music</course>
+        <tutor>Jojo</tutor>
+        <score>3.5</score>
+      </exam>
+      <exam>
+        <course>Sport</course>
+        <tutor>Baba</tutor>
+        <score>3.75</score>
+      </exam>
+    </exams>
+  </student>
+</class>
