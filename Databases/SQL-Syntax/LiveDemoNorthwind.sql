@@ -128,3 +128,4 @@ FROM (
 WHERE 
     Cities.CityID = CitiesInCountries.CityID
 GO
+

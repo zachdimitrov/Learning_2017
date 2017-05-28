@@ -99,3 +99,15 @@ FROM SampleData
 INSERT INTO Persons (FirstName, MiddleName, LastName, AddressId)
 SELECT TOP (50) FirstName, State, LastName, CAST(CAST ((ABS(Checksum(NewID()) %50) + 1) AS NUMERIC(19,4)) AS INT) 
 FROM SampleData
+
+-- Show All People --
+
+SELECT p.FirstName, p.MiddleName, p.LastName, a.Address, t.Name AS [Town], c.Name AS [Country], k.Name AS [Continent]
+FROM Persons p JOIN Addresses a ON p.AddressId = a.Id
+JOIN Towns t ON a.TownId = t.Id
+JOIN Countries c ON t.CountryId = c.Id
+JOIN Continents k ON c.ContinentId = k.Id
+
+DECLARE @name nvarchar(50) = 'Full Name'
+SELECT FirstName + ' ' + LastName + ' ' + @name AS [Full Name] FROM Persons
+GO
