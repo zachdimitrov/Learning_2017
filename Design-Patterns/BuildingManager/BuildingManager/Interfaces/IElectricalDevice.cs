@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuildingManager
+namespace BuildingManager.Interfaces
 {
-    class Program
+    public interface IElectricalDevice
     {
-        static void Main(string[] args)
-        {
-        }
+        void ConsumeElectricity(double electricity);
     }
 }
