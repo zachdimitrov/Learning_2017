@@ -1,16 +1,19 @@
 ## LINQ Cheat Sheet
 
 #### Filtering
+
 ```c#
 var col = from o in Orders
           where o.CustomerID == 84
           select o;
 ```
+
 ```c#
 var col2 = Orders.Where(o => o.CustomerID == 84);
 ```
 
 #### Return Anonymos Type
+
 ```c#
 var col = from o in orders
           select new 
@@ -19,6 +22,7 @@ var col = from o in orders
               Cost = o.Cost 
           };
 ```
+
 ```c#
 var col2 = orders.Select(o => new 
       {
