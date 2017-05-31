@@ -58,3 +58,64 @@ A class should easily substitute its base class
 - Calendar Coder - need to thing when copy code
 - Reinventing the Wheel - opposite
 - Boyscout Rule, NY Police - Car with broken window
+
+## Dependancy Inversion 
+- constructor injection
+```c#
+public Ups(IElectricalDevice elecricalCOnsumer)
+{
+    this.electricalConsumer = electricalConsumer
+}
+// use the consumer
+```
+
+- property injection (if we need to change dependancy)
+```c#
+private IElectricalDevice electricalConsumer;
+public IElectricalDevice ElectricalConsumer
+{
+    get
+    {
+        if(this.electricalConsumer == null)
+        {
+            this.electricalConsumer = new Laptop(); // local default
+        }
+        return this.electricalConsumer;
+    }
+    set
+    {
+        // validate
+        this.electricalConsumer = value;
+    }
+}
+```
+
+- method injection - every time different object
+```c#
+public void ConsumeElectricity(double electricity, IElectricalDevice electricalConsumer)
+{
+    // logic for electricity consuming
+}
+```
+
+- poor mans ioc
+```c#
+// first constructor
+public Ups(IElectricalDevice electricalConsumer)
+    :this.(electricalConsumer, new ConsoleLogger())
+{
+}
+// second construcotr
+Public Ups(IElectricalDevice electricalCOnsumer, ILogger logger)
+{
+    if(this.logger == null)
+    {
+        this.logger = new ConsoleLogger();
+    }
+    else
+    {
+    this.logger = logger
+    }
+    this.electricalConsumet = electricalConsumer;
+}
+```

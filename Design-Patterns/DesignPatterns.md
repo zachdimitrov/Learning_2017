@@ -4,6 +4,7 @@
 - Gang of four - Design Patterns
 
 ## Creational Patterns
+- Factory - creates objects 
 
 ## Structural Patterns
 - Adapter - connects a class to another interfase with medium class
@@ -13,3 +14,6 @@
 ## Behavioral Patterns
 
 ## DI and IoC Containers
+
+## NINJECT
+
