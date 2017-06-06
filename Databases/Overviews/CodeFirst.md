@@ -98,3 +98,14 @@ protected override void OnModelCreating(DbModelBuilder modelBuilder)
                 .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_Name") { IsUnique = true }));
         }
 ```
+
+### Repository Pattern
+- single place to interact with DB
+#### Steps for Repository Creation
+- extract interfase for DbContext
+- add SaveChanges method, DBSet
+```c#
+int SaveChanges();
+DbSet<TEntity> Set<TEntity>() where TEntity : class;
+```
+- implement Set in DbContext file
