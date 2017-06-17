@@ -12,15 +12,18 @@ namespace BuildingManager.ElectricalConsumers
         private const double MaxElectricityAllowed = 100;
 
         private readonly IElectricalDevice electricalConsumer;
+        private readonly DateTime activeDate;
+        private IDateTimeProvider dateTimeProvider;
 
-        public HighElectricityDefender(IElectricalDevice electricalConsumer)
+        public HighElectricityDefender(IElectricalDevice electricalConsumer, TimeSpan duration, IDateTimeProvider dateTimeProvider)
         {
             this.electricalConsumer = electricalConsumer;
+            this.activeDate = this.dateTimeProvider.UtcNow.Add(duration);
         }
 
         public void ConsumeElectricity(double electricity)
         {
-            if (electricity <= MaxElectricityAllowed)
+            if (this.activeDate <= this.dateTimeProvider.UtcNow || electricity <= MaxElectricityAllowed)
             {
                 this.electricalConsumer.ConsumeElectricity(electricity);
             }

@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9837E9A3-CCC5-45EF-A894-283992177E13}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{AE1C3844-317F-4733-9761-16767229A044}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BuildingManager</RootNamespace>
-    <AssemblyName>BuildingManager</AssemblyName>
+    <RootNamespace>Forum.Data</RootNamespace>
+    <AssemblyName>Forum.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,15 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject.Extensions.Interception, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.Extensions.Interception.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,23 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ElectricalConsumers\Adapter.cs" />
-    <Compile Include="ElectricalConsumers\AmericanLaptop.cs" />
-    <Compile Include="ElectricalConsumers\DateTimeProvider.cs" />
-    <Compile Include="ElectricalConsumers\HighElectricityDefender.cs" />
-    <Compile Include="ElectricalConsumers\Laptop.cs" />
-    <Compile Include="ElectricalConsumers\PowerStrip.cs" />
-    <Compile Include="ElectricalConsumers\Ups.cs" />
-    <Compile Include="Interfaces\IAmericanElectricalDevice.cs" />
-    <Compile Include="Interfaces\IDateTimeProvider.cs" />
-    <Compile Include="Interfaces\IElectricalDevice.cs" />
-    <Compile Include="NinjectModules\BuildingManagerModule.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ForumDbContext.cs" />
+    <Compile Include="Migrations\201706062102054_Initial.cs" />
+    <Compile Include="Migrations\201706062102054_Initial.Designer.cs">
+      <DependentUpon>201706062102054_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706062155581_Constraints.cs" />
+    <Compile Include="Migrations\201706062155581_Constraints.Designer.cs">
+      <DependentUpon>201706062155581_Constraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Forum.Models\Forum.Models.csproj">
+      <Project>{977a063b-3708-456e-a2e1-f667ed20826a}</Project>
+      <Name>Forum.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706062102054_Initial.resx">
+      <DependentUpon>201706062102054_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062155581_Constraints.resx">
+      <DependentUpon>201706062155581_Constraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,7 +20,7 @@ namespace TransactionsTest
             var cream = new IceCream() { A = 5, B = 5 };
             data.IceCreams.Add(cream);
             data.SaveChanges();
-            Console.WriteLine(data.IceCreams.FirstOrDefault());
+            Console.WriteLine(data.IceCreams.ToList());
         }
     }
 }

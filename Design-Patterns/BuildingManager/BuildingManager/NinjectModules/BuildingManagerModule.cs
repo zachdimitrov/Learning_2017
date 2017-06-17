@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Ninject;
 using BuildingManager.Interfaces;
 using BuildingManager.ElectricalConsumers;
+using System.Reflection;
 
 namespace BuildingManager.NinjectModules
 {
@@ -21,6 +22,13 @@ namespace BuildingManager.NinjectModules
 
         public override void Load()
         {
+            Kernel.Bind(x =>
+            {
+                x.FromAssembliesInPath(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
+                .SelectAllClasses()
+                .BindDefaultInterface();
+            });
+
             var laptop = this.Bind<IElectricalDevice>().To<Laptop>().Named(LaptopName);
             var adapter = this.Bind<IElectricalDevice>().To<Adapter>().Named(AdapterName);
             var ups = this.Bind<IElectricalDevice>().To<Ups>().Named(UpsName);
@@ -35,7 +43,9 @@ namespace BuildingManager.NinjectModules
                 this.Kernel.Get<IElectricalDevice>(AdapterName)
             });
             ups.WithConstructorArgument(this.Kernel.Get<IElectricalDevice>(PowerStripName));
-            highElectricityDefender.WithConstructorArgument(this.Kernel.Get<IElectricalDevice>(UpsName));
+            highElectricityDefender
+                .WithConstructorArgument(this.Kernel.Get<IElectricalDevice>(UpsName))
+                .WithConstructorArgument(new TimeSpan(365, 0, 0, 0, 0));
         }
     }
 }
