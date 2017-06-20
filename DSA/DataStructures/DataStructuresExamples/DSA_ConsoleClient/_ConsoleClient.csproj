@@ -7,8 +7,8 @@
     <ProjectGuid>{81C774EE-838F-4701-A61C-D9999D5F264B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DSA_ConsoleClient</RootNamespace>
-    <AssemblyName>DSA_ConsoleClient</AssemblyName>
+    <RootNamespace>_ConsoleClient</RootNamespace>
+    <AssemblyName>_ConsoleClient</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
