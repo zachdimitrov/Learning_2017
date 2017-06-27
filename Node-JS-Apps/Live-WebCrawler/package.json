@@ -1,0 +1,19 @@
+{
+    "name": "Live-WebCrawler",
+    "version": "1.0.0",
+    "description": "1. Promises -> async 2. Http -> requests 3. Modules -> $ 4. IO -> lowdb 5. Data Structures -> queue, DFS",
+    "main": "index.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "isomorphic-fetch": "^2.2.1",
+        "jquery": "^3.2.1",
+        "jsdom": "^11.0.0",
+        "write-json-file": "^2.2.0"
+    }
+}

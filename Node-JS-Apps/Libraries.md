@@ -2,8 +2,10 @@
 
 ### General Purpose
 name | install name | description |
---- | --- | ---
+-|-|-
+[yarn](https://www.npmjs.com/package/yarn) | `yarn` | Dependancy manager for node modules `yarn add package`
 [jQuery](https://jquery.com/) | `jquery` | DOM manipulation and AJAX requests
+[jsdom](https://www.npmjs.com/package/jquery) | `jsdom` | Dom simulator for jquery in node.js
 [babel](https://babeljs.io/) | `babel` | ES6 transpiler
 [bower](https://bower.io/) | `bower` | web package manager
 [express](http://expressjs.com/) | `express` | Web framework

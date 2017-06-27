@@ -17,6 +17,11 @@
     - install globally other packages `yarn global add http-server`
     - local packages `yarn add package` 
     - remove with yarn `yarn remove package`
+-install `npm install typings -g` for intellisence
+    - `typings install dt~mongodb --global` example
+### useful commands
+- `wget address > filename` - saves content of web page
+- `node app.js > result.txt` - saves result to file
 
 ## Modules in Node.js
 - export modules
