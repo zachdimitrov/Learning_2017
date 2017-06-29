@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5ABBA7D-E8BC-4E5C-AED6-BAF89A476E27}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{17CB5507-3351-45BD-A6A1-1BCCC4D2E17D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LinearDataStructures</RootNamespace>
-    <AssemblyName>LinearDataStructures</AssemblyName>
+    <RootNamespace>Helpers</RootNamespace>
+    <AssemblyName>Helpers</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,26 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tasks\CustomDataStructures\CustomLinkedList.cs" />
-    <Compile Include="Tasks\CustomDataStructures\CustomLinkedQueue.cs" />
-    <Compile Include="Tasks\CustomDataStructures\CustomStack.cs" />
-    <Compile Include="Tasks\FillWithMinimalDistance.cs" />
-    <Compile Include="Tasks\FindMajorant.cs" />
-    <Compile Include="Tasks\GetCountOfNumbersInRange.cs" />
-    <Compile Include="Tasks\ListSort.cs" />
-    <Compile Include="Tasks\ListCalculations.cs" />
-    <Compile Include="Tasks\LongestSubsequence.cs" />
+    <Compile Include="Optional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tasks\FastestWayFromNtoM.cs" />
-    <Compile Include="Tasks\PrintSequenceMembers.cs" />
-    <Compile Include="Tasks\RemoveNegativeNumbers.cs" />
-    <Compile Include="Tasks\RemoveOddOccuring.cs" />
-    <Compile Include="Tasks\StackReverse.cs" />
-    <Compile Include="Startup.cs" />
-    <Compile Include="Utilities\ConsoleRunner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

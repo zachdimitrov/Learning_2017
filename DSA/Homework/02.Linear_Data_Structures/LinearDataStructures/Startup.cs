@@ -1,4 +1,5 @@
 ﻿using LinearDataStructures.Tasks;
+using LinearDataStructures.Tasks.CustomDataStructures;
 
 namespace LinearDataStructures
 {
@@ -34,6 +35,40 @@ namespace LinearDataStructures
 
             // 9. Using the Queue<T> class write a program to print its first 50 members for given N.
             PrintSequenceMembers.Start();
+
+            // 10. Write a program that finds the shortest sequence of operations from the list above that starts from N and finishes in M.
+            FastestWayFromNtoM.Start();
+
+            // 11. Implement the data structure linked list.
+            //     Define a class ListItem<T> that has two fields: value(of type T) and NextItem(of type ListItem<T>).
+            //     Define additionally a class LinkedList<T> with a single field FirstElement(of type ListItem<T>).
+            var list = new CustomLinkedList<int>();
+            list.AddItem(1);
+
+            // 12. Implement the ADT stack as auto-resizable array.
+            //     Resize the capacity on demand (when no space is available to add / insert a new element).
+            var stack = new CustomStack<int>();
+            stack.Push(2);
+
+            // 13. Implement the ADT queue as dynamic linked list.
+            //     Use generics(LinkedQueue<T>) to allow storing different data types in the queue.
+            var queue = new CustomLinkedQueue<int>();
+            queue.Enqueue(3);
+
+            // 14. We are given a labyrinth of size N x N.
+            //     Some of its cells are empty (0) and some are full(x).
+            //     We can move from an empty cell to another empty cell if they share common wall.
+            //     Given a starting position (*) calculate and fill in the array the minimal distance 
+            //     from this position to any other cell in the array.Use "u" for all unreachable cells.
+            //     Example:
+
+            //     0, 0, 0, x, 0, x         3, 4, 5, x, u, x
+            //     0, x, 0, x, 0, x         2, x, 6, x, u, x
+            //     0, *, x, 0, X, 0   ->    1, *, x, 8, X, 10
+            //     0, x, 0, 0, 0, 0         2, x, 6, 7, 8, 9
+            //     0, 0, 0, x, x, 0         3, 4, 5, x, x, 10 
+            //     0, 0, 0, x, 0, x         4, 5, 6, x, u, x
+            FillWithMinimalDistance.Start();
         }
     }
 }
