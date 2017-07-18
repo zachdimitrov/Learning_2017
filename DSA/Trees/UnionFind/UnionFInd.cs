@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnionFind
 {
@@ -10,7 +6,7 @@ namespace UnionFind
     {
         private int[] array;
 
-        UnionFInd(int n)
+        public UnionFInd(int n)
         {
             array = new int[n];
             for (int i = 0; i < n; i++)
@@ -29,20 +25,27 @@ namespace UnionFind
             return x;
         }
 
-        public int FInd(int x)
+        public int Find(int x)
         {
+            // return array[x] < 0 ? x : array[x] = Find(array[x]);
             if (array[x] < 0)
             {
                 return x;
             }
 
-            return FInd(array[x]);
+            array[x] = Find(array[x]);
+            return array[x];
+        }
+
+        public bool InTheSameSet(int x, int y)
+        {
+            return Find(x) == Find(y);
         }
 
         public bool Union(int x, int y)
         {
-            x = FInd(x);
-            y = FInd(y);
+            x = Find(x);
+            y = Find(y);
 
             if (x == y)
             {
@@ -51,6 +54,11 @@ namespace UnionFind
 
             array[x] = y;
             return true;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine(string.Join(" ", array));
         }
     }
 }

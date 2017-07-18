@@ -1,0 +1,14 @@
+{
+    "name": "Unit-Testing",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Zach D",
+    "license": "MIT",
+    "scripts": {
+        "test": "./node_modules/.bin/mocha test/simple.test.js"
+    },
+    "devDependencies": {
+        "chai": "^4.1.0",
+        "mocha": "^3.4.2"
+    }
+}

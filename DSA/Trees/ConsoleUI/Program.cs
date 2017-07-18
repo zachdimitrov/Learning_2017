@@ -5,8 +5,10 @@ using System.Collections;
 namespace ConsoleUI
 {
     using BinaryHeap;
+    using UnionFind;
     using System.Collections.Generic;
     using Node = Tree<int>;
+    using System.Numerics;
 
     class Program
     {
@@ -60,6 +62,51 @@ namespace ConsoleUI
             
             Console.WriteLine(string.Join(", ", array));
             Console.WriteLine("\nAll removed!");
+
+            Console.WriteLine("Union find");
+
+            var uf = new UnionFInd(10);
+
+            Console.WriteLine("Ackermann");
+            for (int i = 1; i <= 7; i++)
+            {
+                for (int j = 1; j <= 3; j++)
+                {
+                    Console.WriteLine(Ackermann(j , i));
+                }
+            }
+
+            while(true)
+            {
+                var strs = Console.ReadLine().Split(' ');
+                if (strs[0] == "f") 
+                {
+                    int x = int.Parse(strs[1]);
+                    Console.WriteLine(uf.Find(x));
+                }
+                else if(strs[0] == "u")
+                {
+                    int x = int.Parse(strs[1]);
+                    int y = int.Parse(strs[2]);
+                    Console.WriteLine(uf.Union(x, y));
+                }
+
+                uf.Print();
+            }
+        }
+
+        static BigInteger Ackermann(int m, BigInteger n)
+        {
+            if (m == 0)
+            {
+                return n + 1;
+            }
+            if (n == 0)
+            {
+                return Ackermann(m - 1, 1);
+            }
+
+            return Ackermann(m - 1, Ackermann(m, n - 1));
         }
 
         static void Dfs<T>(Tree<T> root)

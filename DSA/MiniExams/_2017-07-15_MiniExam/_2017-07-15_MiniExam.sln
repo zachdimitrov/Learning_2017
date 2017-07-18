@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{2A985C9E-4054-4762-9DA6-D644D28FBB15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bike", "Bike\Bike.csproj", "{3D813C38-F0A0-411D-8D5A-185DDD8FE7D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Train", "Train\Train.csproj", "{CC873BDC-399F-4C86-9C17-1EEEB3BABE51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A985C9E-4054-4762-9DA6-D644D28FBB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A985C9E-4054-4762-9DA6-D644D28FBB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A985C9E-4054-4762-9DA6-D644D28FBB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A985C9E-4054-4762-9DA6-D644D28FBB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D813C38-F0A0-411D-8D5A-185DDD8FE7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D813C38-F0A0-411D-8D5A-185DDD8FE7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D813C38-F0A0-411D-8D5A-185DDD8FE7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D813C38-F0A0-411D-8D5A-185DDD8FE7D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC873BDC-399F-4C86-9C17-1EEEB3BABE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC873BDC-399F-4C86-9C17-1EEEB3BABE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC873BDC-399F-4C86-9C17-1EEEB3BABE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC873BDC-399F-4C86-9C17-1EEEB3BABE51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

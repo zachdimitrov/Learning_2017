@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\BinaryTree\BinaryTree.csproj">
       <Project>{2D3DE4E7-6561-4A6D-A358-D9077F2F4DEF}</Project>
       <Name>BinaryTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnionFind\UnionFind.csproj">
+      <Project>{F388650F-A6B3-428B-A646-0AD8049C3EE7}</Project>
+      <Name>UnionFind</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
