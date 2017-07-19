@@ -2,10 +2,10 @@
   "generator-express": {
     "promptValues": {
       "type": "MVC",
-      "viewEngine": "Handlebars",
+      "viewEngine": "Jade",
       "cssPreprocessor": "None",
-      "buildTool": "Gulp",
-      "database": "MongoDB"
+      "database": "MongoDB",
+      "buildTool": "Gulp"
     }
   }
 }
