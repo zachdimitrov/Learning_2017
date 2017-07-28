@@ -1,4 +1,5 @@
-﻿using HashSetDemo;
+﻿using BinarySearchTreeDemo;
+using HashSetDemo;
 using System;
 //using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,6 +45,21 @@ namespace ConsoleUI
             Console.WriteLine("Pesho e Gosho".GetHashCode());
             Console.WriteLine(new Chushka("blue", 5).GetHashCode());
             Console.WriteLine(new Chushka("blue", 5).GetHashCode());
+
+            Console.WriteLine("++++ AVL Tree Demo ++++");
+            var tree = new AvlTree<int>();
+            tree.Add(3);
+            tree.Add(5);
+            tree.Add(1);
+            tree.Add(7);
+            tree.Add(12);
+            tree.Add(4);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(2);
+            Console.WriteLine(string.Join(" ", tree));
+            Console.WriteLine(tree.Count);
+            Console.WriteLine(tree.Height);
         }
     }
 

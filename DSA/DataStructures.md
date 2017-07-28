@@ -71,3 +71,35 @@ Queue<int> // default structure in C#
 - Directed / undirected
 - Weighted / un-weighted
 - Connected / non-connected
+
+##### searching alghoritms
+
+```c#
+BFS(node)
+{
+queue <- node
+visited[node] = true
+while queue not empty
+    v <- queue
+    print v
+    for each child c of v
+        if not visited[c]
+        queue <- c
+        visited[c] = true
+}
+```
+
+```c#
+DFS(node)
+{
+stack <- node
+visited[node] = true
+while stack not empty
+    v <- stack
+    print v
+    for each child c of v
+        if not visited[c]
+        stack <- c
+        visited[c] = true
+}
+```

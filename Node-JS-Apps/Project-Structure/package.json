@@ -1,21 +1,33 @@
 {
-  "name": "express-structure",
-  "version": "1.0.0",
-  "description": "A simple structure project",
-  "main": "server.js",
-  "scripts": {
-    "test": "test",
-    "start": "node server.js"
-  },
-  "keywords": [
-    "structure"
-  ],
-  "author": "Zach Dimitrov",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongodb": "^2.2.30",
-    "pug": "^2.0.0-rc.2"
-  }
+    "name": "express-structure",
+    "version": "1.0.0",
+    "description": "A simple structure project",
+    "main": "server.js",
+    "scripts": {
+        "test": "./node_modules/.bin/mocha test/**/*.js",
+        "cover": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./test/unit/**/*.js",
+        "start": "node server.js"
+    },
+    "keywords": [
+        "structure"
+    ],
+    "author": "Zach Dimitrov",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "bootstrap": "^3.3.7",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.3",
+        "express": "^4.15.3",
+        "express-messages": "^1.0.1",
+        "express-session": "^1.15.4",
+        "mongodb": "^2.2.30",
+        "pug": "^2.0.0-rc.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^3.4.2",
+        "sinon": "^2.3.8"
+    }
 }

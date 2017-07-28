@@ -22,7 +22,7 @@ namespace BinarySearchTreeDemo
             this.Move(0, 1);
         }
 
-        public void MoveLeftt()
+        public void MoveLeft()
         {
             this.Move(1, 0);
         }

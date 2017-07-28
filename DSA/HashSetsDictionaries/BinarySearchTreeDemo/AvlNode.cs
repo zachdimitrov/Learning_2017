@@ -13,6 +13,8 @@ namespace BinarySearchTreeDemo
 
         public AvlNode(T value)
         {
+            this.size = 1;
+            this.height = 1;
             this.Value = value;
             this.Neighbours = new AvlNode<T>[3];
         }
@@ -56,8 +58,6 @@ namespace BinarySearchTreeDemo
             }
         }
 
-
-
         public static int GetSize(AvlNode<T> node)
         {
             return node == null ? 0 : node.size;
@@ -70,19 +70,64 @@ namespace BinarySearchTreeDemo
 
         public int Ballance => GetHeight(Left) - GetHeight(Right);
 
-        public void RotateRight()
+        public void Update()
         {
-            this.Rotate(0, 1);
+            this.size = GetSize(this.Left) + GetSize(this.Right) + 1;
+            this.height = Math.Max(GetHeight(this.Left), GetHeight(this.Right)) + 1;
+
+            if (this.Ballance < -1)
+            {
+                this.RotateLeft();
+            }
+            else if(this.Ballance > 1)
+            {
+                this.RotateRight();
+            }
+
+            if (this.Parent != null)
+            {
+                this.Parent.Update();
+            }
         }
 
-        public void RotateLeft()
+
+        public AvlNode<T> RotateRight()
         {
-            this.Rotate(1, 0);
+            return this.Rotate(0, 1);
         }
 
-        private void Rotate(int left, int right)
+        public AvlNode<T> RotateLeft()
         {
-            throw new NotImplementedException();
+            return this.Rotate(1, 0);
+        }
+
+        private AvlNode<T> Rotate(int left, int right)
+        {
+            var newRoot = this.Neighbours[left];
+
+            if (newRoot.Neighbours[right] != null)
+            {
+                newRoot.Neighbours[right].Parent = this;
+            }
+
+            if (this.Parent != null)
+            {
+                if (this == this.Parent.Neighbours[left])
+                {
+                    this.Parent.Neighbours[left] = newRoot;
+                }
+                else
+                {
+                    this.Parent.Neighbours[right] = newRoot;
+                }
+            }
+
+            newRoot.Parent = this.Parent;
+            this.Parent = newRoot;
+
+            this.Neighbours[left] = newRoot.Right;
+            newRoot.Neighbours[right] = this;
+            return newRoot;
         }
     }
 }

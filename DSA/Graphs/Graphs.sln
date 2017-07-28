@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{4247844F-30EC-47CB-A0FA-8BE44907C5B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleGraph", "ConsoleUI\SimpleGraph.csproj", "{4247844F-30EC-47CB-A0FA-8BE44907C5B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphsAlgorithms", "GraphsAlgorithms\GraphsAlgorithms.csproj", "{F86A6C17-2598-4190-A229-6654E69495D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraAlgorithm", "DijkstraAlgorithm\DijkstraAlgorithm.csproj", "{A1B4FA16-9218-496D-9898-31E406781ACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4247844F-30EC-47CB-A0FA-8BE44907C5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4247844F-30EC-47CB-A0FA-8BE44907C5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4247844F-30EC-47CB-A0FA-8BE44907C5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86A6C17-2598-4190-A229-6654E69495D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86A6C17-2598-4190-A229-6654E69495D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86A6C17-2598-4190-A229-6654E69495D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86A6C17-2598-4190-A229-6654E69495D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B4FA16-9218-496D-9898-31E406781ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B4FA16-9218-496D-9898-31E406781ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B4FA16-9218-496D-9898-31E406781ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B4FA16-9218-496D-9898-31E406781ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

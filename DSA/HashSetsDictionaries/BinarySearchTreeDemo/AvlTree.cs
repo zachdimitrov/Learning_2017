@@ -36,6 +36,14 @@ namespace BinarySearchTreeDemo
             }
         }
 
+        public AvlTreeIterator<T> End
+        {
+            get
+            {
+                return new AvlTreeIterator<T>(null);
+            }
+        }
+
         public AvlTree()
         {
             this.root = null;
@@ -44,6 +52,33 @@ namespace BinarySearchTreeDemo
         public Tuple<AvlTreeIterator<T>, bool> Add(T value)
         {
             var it = this.LowerBound(value);
+            if (it.Node == null)
+            {
+                var newEndNode = new AvlNode<T>(value);
+                if (this.root == null)
+                {
+
+                    this.root = newEndNode;
+                    var newRootIt = new AvlTreeIterator<T>(this.root);
+                    return new Tuple<AvlTreeIterator<T>, bool>(newRootIt, true);
+                }
+                else
+                {
+                    var node = this.root;
+                    while(node.Right != null)
+                    {
+                        node = node.Right;
+                    }
+
+                    node.Right = newEndNode;
+                    node.Right.Parent = node;
+
+                    node.Update();
+                    var newNodeIt = new AvlTreeIterator<T>(newEndNode);
+                    return new Tuple<AvlTreeIterator<T>, bool>(newNodeIt, true);
+                }
+            }
+
             if (it.Node.Value.CompareTo(value) == 0)
             {
                 return new Tuple<AvlTreeIterator<T>, bool>(it, false);
@@ -58,11 +93,12 @@ namespace BinarySearchTreeDemo
             }
             else
             {
-                it.MoveLeftt();
+                it.MoveLeft();
                 it.Node.Right = newNode;
                 it.Node.Right.Parent = it.Node;
             }
 
+            it.Node.Update();
             var newIt = new AvlTreeIterator<T>(newNode);
             return new Tuple<AvlTreeIterator<T>, bool>(newIt, true);
         }
@@ -102,6 +138,11 @@ namespace BinarySearchTreeDemo
         public AvlTreeIterator<T> LowerBound(T value)
         {
             var node = this.root;
+
+            if (node == null)
+            {
+                return this.End;
+            }
 
             while (true)
             {
@@ -151,4 +192,4 @@ namespace BinarySearchTreeDemo
     }
 }
 
-// 3:46
+// 4:15

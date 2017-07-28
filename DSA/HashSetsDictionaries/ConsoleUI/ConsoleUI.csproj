@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BinarySearchTreeDemo\BinarySearchTreeDemo.csproj">
+      <Project>{D94136F8-F152-424F-986C-F0DBE0BB756D}</Project>
+      <Name>BinarySearchTreeDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HashSetDemo\HashSetDemo.csproj">
       <Project>{8C72DF81-7626-45E3-8878-2174FF3E228D}</Project>
       <Name>HashSetDemo</Name>
