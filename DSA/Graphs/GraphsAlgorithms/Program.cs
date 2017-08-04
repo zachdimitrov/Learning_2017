@@ -26,6 +26,7 @@ namespace GraphsAlgorithms
             Console.SetIn(new StringReader(input));
         }
 
+        // read and save the graph
         private static LinkedList<int>[] ReadGraph()
         {
             FakeInput();
@@ -66,21 +67,92 @@ namespace GraphsAlgorithms
             var vertices = ReadGraph();
             PrintPathWithDfs(vertices);
             PrintPathWithBfs(vertices);
+            PrintPathWithDfsStack(vertices);
         }
 
+        // BFS and print
         private static void PrintPathWithBfs(LinkedList<int>[] vertices)
         {
-            var vertex = 0;
+            Console.WriteLine("\nPrint with BFS");
+
+            var startVertex = 3 - 1;
             var used = new bool[vertices.Length];
+            used[startVertex] = true;
 
             Queue<int> queue = new Queue<int>();
-            queue.Enqueue(3 - 1);
+            var path = new int[vertices.Length];
+
+            queue.Enqueue(startVertex);
+            var distances = new int[vertices.Length];
+
             while (queue.Count > 0)
             {
+                var vertex = queue.Dequeue();
+                Console.WriteLine(vertex + 1);
+                foreach(var next in vertices[vertex])
+                {
+                    if (used[next])
+                    {
+                        continue;
+                    }
 
+                    used[next] = true;
+                    path[next] = vertex;
+                    distances[next] = distances[vertex] + 1;
+                    queue.Enqueue(next);
+                }
+            }
+
+            Console.WriteLine("\nPrint distances");
+
+            for (int i = 0; i < distances.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}: {distances[i]}");
             }
         }
 
+        // DFS and print with stack
+        private static void PrintPathWithDfsStack(LinkedList<int>[] vertices)
+        {
+            Console.WriteLine("\nPrint with DFS stack");
+
+            var startVertex = 3 - 1;
+            var used = new bool[vertices.Length];
+            used[startVertex] = true;
+
+            Stack<int> queue = new Stack<int>();
+            var path = new int[vertices.Length];
+
+            queue.Push(startVertex);
+            var distances = new int[vertices.Length];
+
+            while (queue.Count > 0)
+            {
+                var vertex = queue.Pop();
+                Console.WriteLine(vertex + 1);
+                foreach (var next in vertices[vertex])
+                {
+                    if (used[next])
+                    {
+                        continue;
+                    }
+
+                    used[next] = true;
+                    path[next] = vertex;
+                    distances[next] = distances[vertex] + 1;
+                    queue.Push(next);
+                }
+            }
+
+            Console.WriteLine("\nPrint distances with stack");
+
+            for (int i = 0; i < distances.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}: {distances[i]}");
+            }
+        }
+
+        // DFS print
         private static void PrintPathWithDfs(LinkedList<int>[] vertices)
         {
             var vertex = 0;
@@ -107,6 +179,7 @@ namespace GraphsAlgorithms
             }
         }
 
+        // DFS wih recursion
         private static void Dfs(int vertex, LinkedList<int>[] vertices, bool[] used, int[] path, string sep)
         {
             used[vertex] = true;
@@ -128,5 +201,3 @@ namespace GraphsAlgorithms
         }
     }
 }
-
-// 1:03

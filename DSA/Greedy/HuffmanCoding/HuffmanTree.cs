@@ -31,7 +31,7 @@ namespace HuffmanCoding
             Dfs("");
         }
 
-        private void Dfs(string str)
+        public void Dfs(string str)
         {
             if (this.symbol.HasValue)
             {

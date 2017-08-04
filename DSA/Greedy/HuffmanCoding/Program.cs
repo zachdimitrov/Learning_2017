@@ -36,6 +36,7 @@ namespace HuffmanCoding
             {
                 var x = queue.Dequeue();
                 var y = queue.Dequeue();
+
                 queue.Enqueue(new Tuple<int, HuffmanTree>(
                     x.Item1 + y.Item1,
                     new HuffmanTree(x.Item2, y.Item2)));

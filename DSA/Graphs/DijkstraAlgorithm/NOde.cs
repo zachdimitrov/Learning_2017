@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DijkstraAlgorithm
 {
-    public class Node
+    public class Node:IComparable<Node>
     {
         public Node(int vertex, int distance)
         {
@@ -16,5 +16,10 @@ namespace DijkstraAlgorithm
 
         public int Vertex { get; set; }
         public int Distance { get; set; }
+
+        public int CompareTo(Node other)
+        {
+            return this.Distance.CompareTo(other.Distance);
+        }
     }
 }

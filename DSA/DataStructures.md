@@ -72,6 +72,28 @@ Queue<int> // default structure in C#
 - Weighted / un-weighted
 - Connected / non-connected
 
+##### represent graphs
+- list of neighbours
+```c#
+public class Graph
+{
+    LinkedList<int>[] childNodes;
+    public Graph(LinkedList<int>[] nodes)
+    {
+        this.childNodes = nodes;
+    }
+}
+```
+for each node save connected nodes in a list (linked list, hashset)  
+
+`1 -> {2, 3, 5}`  
+`2 -> {1, 4, 5}`  
+`3 -> {1, 4, 5, 6}`  
+
+- matrix of nodes
+
+- list of edges
+
 ##### searching alghoritms
 
 ```c#
@@ -102,4 +124,34 @@ while stack not empty
         stack <- c
         visited[c] = true
 }
+```
+##### dijkstra 
+```c#
+all nodes Dist = infinity
+current node = 0
+Q -> all nodes from graph ordered by distance
+while Q is not empty
+    a = dequeue the smallest element (first in priority queue)
+        if distance of a == infinity - break
+        foreach neighbour v of a
+            pot = distance of a + distance of (a-v)
+            if pot < distance of v
+                distance of v = pot
+                reorder Q;
+```
+
+##### topological sort
+- weighted graphs
+- no cycles
+
+```
+// source removal
+create empty list
+find node that has no edges to it
+add it to list
+delete all edges from it
+repeat
+
+if graph has edges  -> graph has cycle
+else return list
 ```

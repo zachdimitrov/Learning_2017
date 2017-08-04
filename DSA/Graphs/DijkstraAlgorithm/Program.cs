@@ -29,7 +29,59 @@ namespace DijkstraAlgorithm
         static void Main()
         {
             FakeInput();
-            ReadWeightedGraph();
+            var vertices = ReadWeightedGraph();
+            var dist = Dijkstra(vertices, 1 - 1);
+            Console.WriteLine(string.Join(", ", dist));
+        }
+
+        private static int[] Dijkstra(List<Node>[] vertices, int start)
+        {
+            // regular for is better (3 cycles here)
+            //var d = Enumerable.Range(1, vertices.Length).Select(_ => int.MaxValue).ToArray();
+
+            const int INFINITY = int.MaxValue;
+
+            var d = new int[vertices.Length];
+            for (int i = 0; i < d.Length; i++)
+            {
+                d[i] = INFINITY;
+            }
+
+            d[start] = 0;
+
+            var used = new HashSet<int>();
+            var queue = new PriorityQueue<Node>();
+            queue.Enqueue(new Node(start, 0));
+
+            // repeat
+            while (queue.IsEmpty == false)
+            {
+                // find new best
+                var node = queue.Dequeue();
+                while (queue.IsEmpty == false && used.Contains(node.Vertex))
+                {
+                    node = queue.Dequeue();
+                }
+
+                used.Add(node.Vertex);
+
+                // update distances of best
+                foreach (var next in vertices[node.Vertex])
+                {
+                    var currentDist = d[next.Vertex];
+                    var newDist = d[node.Vertex] + next.Distance;
+
+                    if (currentDist <= newDist)
+                    {
+                        continue;
+                    }
+
+                    d[next.Vertex] = newDist;
+                    queue.Enqueue(new Node(next.Vertex, newDist));
+                }
+            }
+
+            return d;
         }
 
         private static List<Node>[] ReadWeightedGraph()
@@ -38,10 +90,29 @@ namespace DijkstraAlgorithm
             var m = int.Parse(Console.ReadLine());
 
             var vertices = new List<Node>[n];
+
             for (int i = 0; i < m; i++)
             {
-                var edge = conso
+                var edge = Console.ReadLine()
+                    .Split(' ')
+                    .Select(int.Parse)
+                    .ToArray();
+
+                AddEdge(vertices, edge[0] - 1, edge[1] - 1, edge[2]);
+                AddEdge(vertices, edge[1] - 1, edge[0] - 1, edge[2]);
             }
+
+            return vertices;
+        }
+
+        private static void AddEdge(List<Node>[] vertices, int from, int to, int dist)
+        {
+            if (vertices[from] == null)
+            {
+                vertices[from] = new List<Node>();
+            }
+
+            vertices[from].Add(new Node(to, dist));
         }
     }
 }
