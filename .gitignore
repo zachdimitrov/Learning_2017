@@ -198,3 +198,8 @@ FakesAssemblies/
 
 # WebStorm folder
 .idea/
+
+project.lock.json
+project.json
+launch.json
+tasks.json
