@@ -1,5 +1,5 @@
-﻿namespace _01.NNsestedLoops
-{
+﻿namespace RecursionHw
+{ 
     public static class NNestedLoops
     {
         public static void Execute(int n)
