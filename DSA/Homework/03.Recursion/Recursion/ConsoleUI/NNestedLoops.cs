@@ -1,4 +1,6 @@
-﻿namespace RecursionHw
+﻿using System;
+
+namespace RecursionHw
 { 
     public static class NNestedLoops
     {
@@ -13,7 +15,7 @@
         {
             if (s > n)
             {
-                System.Console.WriteLine(result);
+                Console.WriteLine(result);
                 return;
             }
 

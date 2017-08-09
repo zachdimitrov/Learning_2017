@@ -17,7 +17,6 @@ namespace RecursionHw
             if (index == k)
             {
                 Console.WriteLine(string.Join(", ", comb));
-                used = new bool[set.Length];
                 return;
             }
 
@@ -31,6 +30,7 @@ namespace RecursionHw
                 comb[index] = set[i];
                 used[i] = true;
                 Execute(index + 1, set, k, comb, used);
+                used[i] = false;
             }
         }
     }

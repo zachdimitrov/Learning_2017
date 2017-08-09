@@ -43,11 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllPathsInMatrix.cs" />
     <Compile Include="CombinationsNoDuplicates.cs" />
     <Compile Include="CombinationsWithDuplicates.cs" />
+    <Compile Include="FindPathInMatrix.cs" />
     <Compile Include="NNestedLoops.cs" />
+    <Compile Include="Permutations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Matrix.cs" />
+    <Compile Include="Variations.cs" />
+    <Compile Include="VariationsNoRep.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
