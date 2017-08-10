@@ -34,5 +34,44 @@ namespace RecursionHw
                 used[i] = false;
             }
         }
+
+        internal static void Execute(string[] set)
+        {
+            Array.Sort(set);
+            int n = set.Length;
+            GeneratePermutationsFromSet(0, set, n);
+        }
+
+        private static void GeneratePermutationsFromSet(int index, string[] perm, int n)
+        {
+            var tmp = "";
+            Console.WriteLine(string.Join(", ", perm));
+
+            if (index < n)
+            {
+                for (int i = n - 2; i >= index; i--)
+                {
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        if (perm[i] != perm[j])
+                        {
+                            tmp = perm[i];
+                            perm[i] = perm[j];
+                            perm[j] = tmp;
+
+                            GeneratePermutationsFromSet(i + 1, perm, n);
+                        }
+                    }
+
+                    tmp = perm[i];
+                    for (int k = i; k < n - 1; k++)
+                    {
+                        perm[k] = perm[++k];
+                    }
+
+                    perm[n - 1] = tmp;
+                }
+            }
+        }
     }
 }

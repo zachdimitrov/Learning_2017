@@ -16,6 +16,8 @@ namespace RecursionHw
             set[3] = "i";
             set[4] = "s";
 
+            set = new string[] { "1", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5" };
+
             Console.WriteLine("[ " + string.Join(", ", set) + " ]" + "\n");
 
             // simple matrix
@@ -28,14 +30,13 @@ namespace RecursionHw
 
                 {' ', ' ', ' ', ' ', ' ', ' ', ' '},
 
-                {' ', '*', '*', '*', '*', '*', ' '},
+                {'*', '*', '*', '*', '*', '*', '*'},
 
                 {' ', ' ', ' ', ' ', ' ', ' ', 'e'},
 
             };
 
             Matrix.Print(matrix);
-            Console.WriteLine();
 
             // big matrix
             int num = 3;
@@ -73,7 +74,16 @@ namespace RecursionHw
             // AllPathsInMatrix.Execute(matrix);
 
             // 08. Find if path exists between cells
-            FindPathInMatrix.Execute(bigMatrix);
+            // FindPathInMatrix.Execute(bigMatrix);
+
+            // 09. Largest connected area of adjacent empty cells
+            // LargestConnectedArea.Execute(matrix);
+
+            // 10. All areas of connected cells
+            // LargestConnectedArea.Execute(matrix);  // prints all of them before best
+
+            // 11. Permutations with repetition
+            Permutations.Execute(set);
         }
     }
 }
