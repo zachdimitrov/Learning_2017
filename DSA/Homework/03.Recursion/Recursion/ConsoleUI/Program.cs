@@ -16,7 +16,8 @@ namespace RecursionHw
             set[3] = "i";
             set[4] = "s";
 
-            set = new string[] { "1", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5", "5" };
+            // simple set with many elements
+            var intSet = new int[] { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
             Console.WriteLine("[ " + string.Join(", ", set) + " ]" + "\n");
 
@@ -83,7 +84,10 @@ namespace RecursionHw
             // LargestConnectedArea.Execute(matrix);  // prints all of them before best
 
             // 11. Permutations with repetition
-            Permutations.Execute(set);
+            Permutations.Execute(intSet);
+
+            // 12. Eight queens
+            //EightQueens.Execute();
         }
     }
 }

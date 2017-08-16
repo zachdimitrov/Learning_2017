@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting.Tests", "Sorting.Tests\Sorting.Tests.csproj", "{F6ADF1CC-1ADB-434B-BADE-A94E290B3C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Sorting\Sorting.csproj", "{F5EA7516-657E-468B-97CE-60CAAF4FD3CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6ADF1CC-1ADB-434B-BADE-A94E290B3C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6ADF1CC-1ADB-434B-BADE-A94E290B3C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6ADF1CC-1ADB-434B-BADE-A94E290B3C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6ADF1CC-1ADB-434B-BADE-A94E290B3C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EA7516-657E-468B-97CE-60CAAF4FD3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EA7516-657E-468B-97CE-60CAAF4FD3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EA7516-657E-468B-97CE-60CAAF4FD3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EA7516-657E-468B-97CE-60CAAF4FD3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

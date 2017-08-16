@@ -35,43 +35,48 @@ namespace RecursionHw
             }
         }
 
-        internal static void Execute(string[] set)
+        internal static void Execute(int[] set)
         {
             Array.Sort(set);
             int n = set.Length;
-            GeneratePermutationsFromSet(0, set, n);
+            PermuteRep(set, 0, n);
         }
 
-        private static void GeneratePermutationsFromSet(int index, string[] perm, int n)
+        private static void PermuteRep(int[] set, int start, int length)
         {
-            var tmp = "";
-            Console.WriteLine(string.Join(", ", perm));
+            Console.WriteLine(string.Join(" ", set));
 
-            if (index < n)
+            if (start < length)
             {
-                for (int i = n - 2; i >= index; i--)
+                for (int i = length - 2; i >= start; i--)
                 {
-                    for (int j = i + 1; j < n; j++)
+                    for (int j = i + 1; j < length; j++)
                     {
-                        if (perm[i] != perm[j])
+                        if (set[i] != set[j])
                         {
-                            tmp = perm[i];
-                            perm[i] = perm[j];
-                            perm[j] = tmp;
-
-                            GeneratePermutationsFromSet(i + 1, perm, n);
+                            Swap(ref set[i], ref set[j]);
+                            PermuteRep(set, i + 1, length);
                         }
                     }
 
-                    tmp = perm[i];
-                    for (int k = i; k < n - 1; k++)
+                    var tmp = set[i];
+                    for (int k = i; k < length - 1;)
                     {
-                        perm[k] = perm[++k];
+                        set[k] = set[++k];
                     }
 
-                    perm[n - 1] = tmp;
+                    set[length - 1] = tmp;
+
+
                 }
             }
+        }
+
+        private static void Swap(ref int v1, ref int v2)
+        {
+            var temp = v1;
+            v1 = v2;
+            v2 = temp;
         }
     }
 }
