@@ -1,0 +1,21 @@
+        // (s1 >= s2 && s1 <= e2) || (s1 <= s2 && e1 >= s2)
+        // category: category,
+        // booked: {
+        //     $not: {
+        //         $elemMatch: {
+        //             $or: [{
+        //                     $and: [
+        //                         { startdate: { $gte: startDate } },
+        //                         { startdate: { $lte: endDate } },
+        //                     ],
+        //                 },
+        //                 {
+        //                     $and: [
+        //                         { startdate: { $lte: startDate } },
+        //                         { enddate: { $gte: startDate } },
+        //                     ],
+        //                 },
+        //             ],
+        //         },
+        //     },
+        // },
