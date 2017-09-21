@@ -1,0 +1,9 @@
+﻿@using ExampleProject.Models
+@model ExampleViewModel
+
+<h1>Hello @Model.Name</h1>
+
+@foreach (var name in Model.Friends)
+{
+    <strong>Friend: </strong><p class="friend-name">@name</p>
+}
