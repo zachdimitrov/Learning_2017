@@ -23,7 +23,7 @@ namespace Memoisation_Stools
         static int n;
         static int[,,] memo;
 
-        static vpid MaxHeightDP(int used, int top, int side)
+        static void MaxHeightDP(int used, int top, int side)
         {
             if (memo[used, top, side] != 0)
             {
