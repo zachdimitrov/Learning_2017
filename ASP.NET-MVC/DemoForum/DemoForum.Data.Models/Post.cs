@@ -9,9 +9,9 @@ namespace DemoForum.Data.Models
 {
     public class Post : DataModel
     {
-        public string Content { get; set; }
+        public string Title { get; set; }
 
-        public Guid AuthorId { get; set; }
+        public string Content { get; set; }
 
         public virtual User Author { get; set; }
     }

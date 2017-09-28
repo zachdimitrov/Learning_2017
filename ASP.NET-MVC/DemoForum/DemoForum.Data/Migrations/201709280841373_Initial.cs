@@ -12,8 +12,8 @@ namespace DemoForum.Data.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
+                        Title = c.String(),
                         Content = c.String(),
-                        AuthorId = c.Guid(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                         CreatedOn = c.DateTime(),
                         DeletedOn = c.DateTime(),
@@ -30,6 +30,10 @@ namespace DemoForum.Data.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        IsDeleted = c.Boolean(nullable: false),
+                        CreatedOn = c.DateTime(),
+                        DeletedOn = c.DateTime(),
+                        ModifiedOn = c.DateTime(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -43,6 +47,7 @@ namespace DemoForum.Data.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
+                .Index(t => t.IsDeleted)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
             CreateTable(
@@ -98,8 +103,8 @@ namespace DemoForum.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Posts", "Author_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Posts", "Author_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
@@ -108,6 +113,7 @@ namespace DemoForum.Data.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.AspNetUsers", new[] { "IsDeleted" });
             DropIndex("dbo.Posts", new[] { "Author_Id" });
             DropIndex("dbo.Posts", new[] { "IsDeleted" });
             DropTable("dbo.AspNetRoles");
