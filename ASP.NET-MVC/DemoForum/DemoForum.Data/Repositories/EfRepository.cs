@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DemoForum.Data.Repositories
 {
-    public class EfRepostory<T> : IEfRepostory<T> where T : class, IDeletable
+    public class EfRepository<T> : IEfRepository<T> where T : class, IDeletable
     {
         private readonly MsSqlDbContext context;
 
-        public EfRepostory(MsSqlDbContext context)
+        public EfRepository(MsSqlDbContext context)
         {
             this.context = context;
         }

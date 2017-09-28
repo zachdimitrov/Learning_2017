@@ -53,6 +53,10 @@
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
       <Private>True</Private>
@@ -265,6 +269,10 @@
     <ProjectReference Include="..\DemoForum.Data\DemoForum.Data.csproj">
       <Project>{9FF8C056-D94C-478C-A383-531BCB5A3A7B}</Project>
       <Name>DemoForum.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoForum.Services\DemoForum.Services.csproj">
+      <Project>{8BA69683-EB69-43F6-9FFB-3F4AA8349E68}</Project>
+      <Name>DemoForum.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
