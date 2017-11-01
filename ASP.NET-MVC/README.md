@@ -97,15 +97,108 @@ namespace Project.Controllers
     }
 }
 ```
+
 folder `views/Home` will contain:
 - `Index.cshtml`
 - `About.cshtml`
 
 ### Views
-- must be in folders named under controller name
-- name of files must be like name of methods
-  - `Home/Index.cshtml`
 
-#### Razor syntax
-`@DateTime.Now` after C# code becomes invalid starts rendering html
- 
+- strart rendering from outer most view
+
+```c#
+@using Example.Models
+@model MyViewModel
+
+@{
+    ViewBag.Title = "Home Page";  // multi line scope (visible for whole view)
+}
+
+@DateTime.Now // single line C#
+
+@for(int i = 0; i < 5; i++) { // c# scope
+    <div> Hello </div> // html inside
+} // end of c# scope
+
+@: single line text to render
+
+<text>
+    multi-line text
+    renders as normal html text
+</text>
+```
+
+- layouts
+if layout is set to `null` it will not render in layout
+
+```c#
+@{
+    Layout="~/Views/Shared/_MasterLayout.cshtml" // default is _ViewStart.cshtml
+}
+```
+
+- sections
+create section
+```c# 
+@section mysection {
+    <h1> In section! </h1>
+}
+```
+render in layout
+```c#
+@RenderSection("mysection", required: false)
+```
+- helpers
+```c#
+@Html.TextBox("Username");
+
+@using (Html.BeginForm("PostForm", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.something, 
+    new { @class="form-controll" type="number" }); // create object for attributes
+}
+
+<input class="form-control" asp-for="Something" /> // the same as above
+
+@Url.Action
+
+@Html.ActionLink("To about", "About", "Home"); // text, action, controller
+```
+- helpers 
+in floder `App-Code`
+with view - `Helpers.cshtml`
+```c#
+@helper WriteValue(int value)
+{
+    @:value passed: @value
+}
+```
+use it like `@Helpers.WriteValue(10)`
+
+- partial views
+name it like this `_CustomPartial.cshtml`
+use it with 
+`@Html.Partial("_CustomPartial")` - inside html
+`@Html.RenderPartial("_CustomPartial")` - inside c# mode
+
+in controllers
+`return this.PartialView();`
+
+- child action
+`@Html.Action("ChildAction", new {id = "5"})`
+
+ ### Bundles
+ - combine scripts and styles in bundles
+ ```c#
+ bundles.Add(new ScriptBundle())
+ ```
+### Areas
+- create area with right button
+- it is a complete set with controllers and views
+
+### Action filters
+- OutputCache
+- ValidateInput (false)
+- Authorize
+- ValidateAntiForgeryToken
+- HandleError
