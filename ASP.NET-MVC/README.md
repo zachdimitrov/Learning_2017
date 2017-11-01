@@ -100,3 +100,12 @@ namespace Project.Controllers
 folder `views/Home` will contain:
 - `Index.cshtml`
 - `About.cshtml`
+
+### Views
+- must be in folders named under controller name
+- name of files must be like name of methods
+  - `Home/Index.cshtml`
+
+#### Razor syntax
+`@DateTime.Now` after C# code becomes invalid starts rendering html
+ 
