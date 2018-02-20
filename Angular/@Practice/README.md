@@ -1,4 +1,13 @@
 ## Angular 2
+
+### CLI Commands
+`npm install -g @angular/cli` - install angular cli  
+`ng new my-app-name` - create new app  
+`ng serve --open` - serve and open app in browser  
+`ng generate component comp-name` - create new component  
+`ng generate service service-name --module=app` - create new service and module
+
+
 ## Basic structure
 - modules - lists components and bootstraps
 - components - basic part of angular - exports a single directive
